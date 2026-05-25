@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore la galería de arte digital exclusiva de Ángela María. Una colección premium de óleos, acrílicos y acuarelas pintados a mano.">
+    <meta name="keywords" content="Ángela María, galería de arte, cuadros pintados a mano, óleo, acrílico, acuarela, bellas artes, pintura de paisajes">
+    <meta name="author" content="Ángela María">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Ángela María | Galería de Arte Fino y Cuadros Pintados a Mano">
+    <meta property="og:description" content="Descubra obras de arte originales y texturizadas que transmiten emoción y color. Colección digital de Ángela María.">
+    <meta property="og:image" content="assets/obra_1.png">
+    
+    <title>Ángela María | Galería de Arte Fino y Cuadros Pintados a Mano</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header class="main-header" id="header">
+        <div class="header-container">
+            <a href="#hero" class="logo" id="logo-link">
+                Ángela María <span class="logo-dot">.</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="#hero" class="nav-link" id="link-inicio">Inicio</a></li>
+                    <li><a href="#galeria" class="nav-link" id="link-galeria">Exhibición</a></li>
+                    <li><a href="#artista" class="nav-link" id="link-artista">Sobre Mí</a></li>
+                    <li><a href="#contacto" class="nav-link" id="link-contacto">Contacto</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-label="Abrir menú de navegación">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-bg-overlay"></div>
+            <div class="hero-content">
+                <p class="hero-subtitle">Galería de Arte Digital</p>
+                <h1 class="hero-title">Pintura a Mano con Alma y Textura</h1>
+                <p class="hero-description">
+                    Una colección exclusiva de obras originales creadas por Ángela María. Cada pincelada cuenta una historia inspirada en la luz, los paisajes naturales y el arte abstracto.
+                </p>
+                <div class="hero-actions">
+                    <a href="#galeria" class="btn btn-primary" id="btn-explore">Explorar Colección</a>
+                    <a href="#contacto" class="btn btn-secondary" id="btn-inquire-hero">Inquire / Consultar</a>
+                </div>
+            </div>
+            <div class="hero-scroll" aria-hidden="true">
+                <a href="#galeria" class="scroll-indicator" id="scroll-indicator">
+                    <span class="scroll-text">Deslizar para ver</span>
+                    <svg class="scroll-arrow" viewBox="0 0 24 24" width="24" height="24">
+                        <path d="M12 5v14M5 12l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section class="gallery-section" id="galeria">
+            <div class="section-container">
+                <div class="section-header">
+                    <h2 class="section-title">La Exhibición</h2>
+                    <p class="section-subtitle">Filtrar por técnica artística</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="gallery-filters" id="gallery-filters" role="tablist" aria-label="Filtros de técnica de pintura">
+                    <button class="filter-btn active" id="filter-all" role="tab" aria-selected="true" data-filter="all">Todas las Obras</button>
+                    <button class="filter-btn" id="filter-oleo" role="tab" aria-selected="false" data-filter="oleo">Óleos</button>
+                    <button class="filter-btn" id="filter-acrilico" role="tab" aria-selected="false" data-filter="acrilico">Acrílicos</button>
+                    <button class="filter-btn" id="filter-acuarela" role="tab" aria-selected="false" data-filter="acuarela">Acuarelas</button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="gallery-grid" id="gallery-grid" aria-live="polite">
+                    <!-- Artwork Card 1 -->
+                    <article class="art-card" data-category="oleo" data-id="1">
+                        <div class="art-img-container">
+                            <img src="assets/obra_1.png" alt="Pintura al óleo de un paisaje montañoso al atardecer por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">Ver Detalles</span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Óleo sobre Lienzo</span>
+                            <h3 class="art-title">Cumbre Dorada</h3>
+                            <p class="art-price">Disponible</p>
+                        </div>
+                    </article>
+
+                    <!-- Artwork Card 2 -->
+                    <article class="art-card" data-category="acrilico" data-id="2">
+                        <div class="art-img-container">
+                            <img src="assets/obra_2.png" alt="Obra de arte abstracto acrílico con texturas doradas y azules por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">Ver Detalles</span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Acrílico Impasto</span>
+                            <h3 class="art-title">Torrente Oceánico</h3>
+                            <p class="art-price">Disponible</p>
+                        </div>
+                    </article>
+
+                    <!-- Artwork Card 3 -->
+                    <article class="art-card" data-category="acuarela" data-id="3">
+                        <div class="art-img-container">
+                            <img src="assets/obra_3.png" alt="Pintura botánica delicada en acuarela por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">Ver Detalles</span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Acuarela sobre Papel</span>
+                            <h3 class="art-title">Susurros de Eucalipto</h3>
+                            <p class="art-price">Colección Privada</p>
+                        </div>
+                    </article>
+
+                    <!-- Artwork Card 4 -->
+                    <article class="art-card" data-category="oleo" data-id="4">
+                        <div class="art-img-container">
+                            <img src="assets/obra_4.png" alt="Bodegón clásico al óleo con peras y paño de terciopelo por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">Ver Detalles</span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Óleo sobre Madera</span>
+                            <h3 class="art-title">Naturaleza Silente</h3>
+                            <p class="art-price">Disponible</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artist Bio Section -->
+        <section class="artist-section" id="artista">
+            <div class="section-container">
+                <div class="artist-grid">
+                    <div class="artist-image">
+                        <div class="artist-frame">
+                            <img src="assets/profile.jpg" alt="Retrato fotográfico de la artista Ángela María" loading="lazy">
+                        </div>
+                    </div>
+                    <div class="artist-content">
+                        <p class="artist-tag">La Artista</p>
+                        <h2 class="artist-name">Ángela María</h2>
+                        <div class="artist-divider"></div>
+                        <p class="artist-text">
+                            Mi arte nace de una necesidad profunda de dialogar con la materia, el color y la textura. Cada uno de mis cuadros es un proceso físico e íntimo pintado a mano, donde busco capturar la sutileza de la luz natural y la fuerza dramática de las composiciones abstractas y figurativas.
+                        </p>
+                        <p class="artist-text">
+                            Trabajo principalmente con técnicas tradicionales de óleo sobre lienzo, construyendo capas con espátula y pincel grueso para otorgar relieve y carácter tridimensional a la obra. Asimismo, experimento con el acrílico fluido y las transparencias etéreas de la acuarela sobre papel de algodón.
+                        </p>
+                        <blockquote class="artist-quote">
+                            "Pintar es dar forma visible a la vibración silenciosa del mundo."
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contacto">
+            <div class="section-container">
+                <div class="contact-card">
+                    <div class="contact-header">
+                        <h2>Adquirir u Consultar</h2>
+                        <p>¿Interesado en alguna de las obras o deseas un cuadro por encargo? Ponte en contacto directamente con Ángela María.</p>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/xvzyzjjl" method="POST" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="form-name">Nombre Completo</label>
+                                <input type="text" id="form-name" name="name" required placeholder="Ej. Juan Pérez" maxlength="80">
+                                <span class="error-msg" id="error-name" aria-live="polite"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="form-email">Correo Electrónico</label>
+                                <input type="email" id="form-email" name="email" required placeholder="nombre@correo.com">
+                                <span class="error-msg" id="error-email" aria-live="polite"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-artwork">Obra de Interés (Opcional)</label>
+                            <select id="form-artwork" name="artwork">
+                                <option value="general">Consulta General / Encargo Especial</option>
+                                <option value="Cumbre Dorada">Cumbre Dorada (Óleo sobre Lienzo)</option>
+                                <option value="Torrente Oceánico">Torrente Oceánico (Acrílico Impasto)</option>
+                                <option value="Susurros de Eucalipto">Susurros de Eucalipto (Acuarela sobre Papel)</option>
+                                <option value="Naturaleza Silente">Naturaleza Silente (Óleo sobre Madera)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="form-message">Mensaje</label>
+                            <textarea id="form-message" name="message" required placeholder="Escribe tu consulta aquí..." rows="5" maxlength="1000"></textarea>
+                            <span class="error-msg" id="error-message" aria-live="polite"></span>
+                        </div>
+
+                        <!-- Form Status Message -->
+                        <div class="form-status" id="form-status" aria-live="polite"></div>
+
+                        <button type="submit" class="btn btn-primary btn-block" id="btn-submit-form">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <p class="footer-copy">&copy; 2026 Ángela María. Todos los derechos reservados.</p>
+            <p class="footer-security">Página protegida y optimizada mediante estándares OWASP / Secure Coding.</p>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal (Details) -->
+    <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-art-title">
+        <div class="lightbox-overlay" id="lightbox-overlay"></div>
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar modal de detalles">
+                <svg viewBox="0 0 24 24" width="24" height="24">
+                    <path d="M18 6L6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <div class="lightbox-grid">
+                <div class="lightbox-image-wrapper">
+                    <img id="modal-art-image" src="" alt="Exhibición a pantalla completa">
+                </div>
+                <div class="lightbox-info">
+                    <span class="lightbox-tag" id="modal-art-category">Técnica</span>
+                    <h2 class="lightbox-title" id="modal-art-title">Título de la Obra</h2>
+                    
+                    <div class="lightbox-details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Medidas</span>
+                            <span class="detail-val" id="modal-art-size">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Soporte</span>
+                            <span class="detail-val" id="modal-art-support">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Año</span>
+                            <span class="detail-val" id="modal-art-year">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Estado</span>
+                            <span class="detail-val" id="modal-art-status">-</span>
+                        </div>
+                    </div>
+
+                    <p class="lightbox-description" id="modal-art-description">
+                        Descripción detallada de la pintura, expresando los matices, inspiración y texturas.
+                    </p>
+
+                    <button class="btn btn-primary btn-block" id="modal-btn-inquire">Consultar Adquisición</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Script -->
+    <script src="index.js"></script>
+</body>
+</html>
