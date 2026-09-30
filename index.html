@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore la galería de arte digital exclusiva de Ángela María. Una colección premium de óleos, acrílicos y acuarelas pintados a mano.">
-    <meta name="keywords" content="Ángela María, galería de arte, cuadros pintados a mano, óleo, acrílico, acuarela, bellas artes, pintura de paisajes">
+    <meta name="description" content="Galería de arte y estudio de Ángela María. Simbolismo onírico, bestiario mitológico, espátula al impasto y retratos contemporáneos. Obras originales al óleo y técnica mixta.">
+    <meta name="keywords" content="Ángela María, galería de arte, bellas artes, simbolismo, mitología, óleo impasto, espátula, retratos al óleo, bestiario, arte contemporáneo colombiano">
     <meta name="author" content="Ángela María">
     
-    <!-- Open Graph / Social Media -->
+    <!-- Open Graph / Redes Sociales -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Ángela María | Galería de Arte Fino y Cuadros Pintados a Mano">
-    <meta property="og:description" content="Descubra obras de arte originales y texturizadas que transmiten emoción y color. Colección digital de Ángela María.">
-    <meta property="og:image" content="assets/obra_1.png">
+    <meta property="og:title" content="Ángela María | Galería de Arte & Universo Pictórico">
+    <meta property="og:description" content="Descubra las pinturas originales de Ángela María: una convergencia entre mitología, naturaleza viva, fuerza matérica y emoción humana.">
+    <meta property="og:image" content="multimedia/SIRENA.jpg">
     
-    <title>Ángela María | Galería de Arte Fino y Cuadros Pintados a Mano</title>
+    <title>Ángela María | Galería de Arte Fino & Bellas Artes</title>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Cormorant Garamond, Playfair Display y Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
-    <!-- Stylesheet -->
+    <!-- Hoja de Estilos -->
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
-    <!-- Header & Navigation -->
+    <!-- Header & Navegación -->
     <header class="main-header" id="header">
         <div class="header-container">
             <a href="#hero" class="logo" id="logo-link">
@@ -34,8 +34,9 @@
             <nav class="nav-menu" id="nav-menu" aria-label="Navegación principal">
                 <ul>
                     <li><a href="#hero" class="nav-link" id="link-inicio">Inicio</a></li>
-                    <li><a href="#galeria" class="nav-link" id="link-galeria">Exhibición</a></li>
-                    <li><a href="#artista" class="nav-link" id="link-artista">Sobre Mí</a></li>
+                    <li><a href="#colecciones" class="nav-link" id="link-colecciones">Colecciones</a></li>
+                    <li><a href="#galeria" class="nav-link" id="link-galeria">Catálogo</a></li>
+                    <li><a href="#artista" class="nav-link" id="link-artista">La Artista</a></li>
                     <li><a href="#contacto" class="nav-link" id="link-contacto">Contacto</a></li>
                 </ul>
             </nav>
@@ -47,184 +48,578 @@
         </div>
     </header>
 
-    <!-- Main Content -->
+    <!-- Contenido Principal -->
     <main>
 
-        <!-- Hero Section -->
+        <!-- Hero Section Editorial & Artístico -->
         <section class="hero-section" id="hero">
-            <div class="hero-bg-overlay"></div>
-            <div class="hero-content">
-                <p class="hero-subtitle">Galería de Arte Digital</p>
-                <h1 class="hero-title">Pintura a Mano con Alma y Textura</h1>
-                <p class="hero-description">
-                    Una colección exclusiva de obras originales creadas por Ángela María. Cada pincelada cuenta una historia inspirada en la luz, los paisajes naturales y el arte abstracto.
-                </p>
-                <div class="hero-actions">
-                    <a href="#galeria" class="btn btn-primary" id="btn-explore">Explorar Colección</a>
-                    <a href="#contacto" class="btn btn-secondary" id="btn-inquire-hero">Inquire / Consultar</a>
+            <div class="hero-ambient-spotlight"></div>
+            <div class="hero-bg-texture"></div>
+            
+            <div class="hero-container">
+                <div class="hero-content">
+                    <span class="hero-tag">Estudio & Galería de Arte Original</span>
+                    <h1 class="hero-title">
+                        Misticismo, Materia <span class="ampersand">&amp;</span> Espíritu Vivo
+                    </h1>
+                    <p class="hero-quote">
+                        "Pintar es tender un puente silencioso entre el mito ancestral, la pulsión de la naturaleza y las verdades secretas del alma."
+                    </p>
+                    <p class="hero-description">
+                        Explora la colección pictórica de Ángela María: óleos esculpidos con espátula, simbolismo onírico y técnicas mixtas que desafían el marco tradicional.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#galeria" class="btn btn-primary" id="btn-explore">
+                            <span>Explorar Colección</span>
+                            <svg class="btn-arrow" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#contacto" class="btn btn-secondary" id="btn-inquire-hero">Adquisición / Encargos</a>
+                    </div>
+                </div>
+
+                <!-- Featured Hero Artwork Diptych Preview -->
+                <div class="hero-artwork-preview" id="hero-preview" role="region" aria-label="Obra insignia en exhibición">
+                    <div class="preview-frame">
+                        <div class="spotlight-cone"></div>
+                        <img src="multimedia/Sirena.jpg" alt="Sirena - Serie: Ser-Es por Ángela María" class="preview-img">
+                        <div class="preview-badge">
+                            <span class="badge-dot"></span>
+                            <span class="badge-text">Obra Insignia &bull; <em>Sirena &bull; Serie: Ser-Es</em></span>
+                        </div>
+                    </div>
                 </div>
             </div>
+
             <div class="hero-scroll" aria-hidden="true">
-                <a href="#galeria" class="scroll-indicator" id="scroll-indicator">
-                    <span class="scroll-text">Deslizar para ver</span>
-                    <svg class="scroll-arrow" viewBox="0 0 24 24" width="24" height="24">
-                        <path d="M12 5v14M5 12l7 7 7-7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+                <a href="#colecciones" class="scroll-indicator" id="scroll-indicator">
+                    <span class="scroll-text">Descender a las Colecciones</span>
+                    <div class="scroll-line"></div>
                 </a>
             </div>
         </section>
 
-        <!-- Gallery Section -->
-        <section class="gallery-section" id="galeria">
+        <!-- Sección de Colecciones / Series de Ángela María -->
+        <section class="collections-section" id="colecciones">
             <div class="section-container">
                 <div class="section-header">
-                    <h2 class="section-title">La Exhibición</h2>
-                    <p class="section-subtitle">Filtrar por técnica artística</p>
+                    <span class="curatorial-label">Universo Pictórico</span>
+                    <h2 class="section-title">Colecciones &amp; Series</h2>
+                    <div class="header-gold-line"></div>
+                    <p class="section-subtitle">
+                        Las obras de Ángela María se articulan en series conceptuales donde convergen la metamorfosis, el ciclo sagrado, la bravura animal y el retrato íntimo.
+                    </p>
                 </div>
 
-                <!-- Category Filters -->
-                <div class="gallery-filters" id="gallery-filters" role="tablist" aria-label="Filtros de técnica de pintura">
-                    <button class="filter-btn active" id="filter-all" role="tab" aria-selected="true" data-filter="all">Todas las Obras</button>
-                    <button class="filter-btn" id="filter-oleo" role="tab" aria-selected="false" data-filter="oleo">Óleos</button>
-                    <button class="filter-btn" id="filter-acrilico" role="tab" aria-selected="false" data-filter="acrilico">Acrílicos</button>
-                    <button class="filter-btn" id="filter-acuarela" role="tab" aria-selected="false" data-filter="acuarela">Acuarelas</button>
-                </div>
+                <div class="collections-grid">
+                    <!-- Colección 1: Serie Ser-Es -->
+                    <div class="collection-card" data-collection-key="ser-es">
+                        <div class="collection-img-wrap">
+                            <img src="multimedia/Sirena.jpg" alt="Serie: Ser-Es por Ángela María" loading="lazy">
+                            <div class="collection-count-badge">3 Obras</div>
+                        </div>
+                        <div class="collection-body">
+                            <span class="collection-tagline">Mito &amp; Metamorfosis</span>
+                            <h3 class="collection-name">Serie: Ser-Es</h3>
+                            <p class="collection-summary">Sirena, Sátiro y Lechuza. Indagación onírica sobre la frontera entre lo humano, lo animal y lo arquetípico sobre papel kraft y técnica mixta.</p>
+                            <a href="#galeria" class="collection-btn" data-filter-trigger="ser-es">
+                                <span>Ver Serie Completa</span>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </a>
+                        </div>
+                    </div>
 
-                <!-- Gallery Grid -->
-                <div class="gallery-grid" id="gallery-grid" aria-live="polite">
-                    <!-- Artwork Card 1 -->
-                    <article class="art-card" data-category="oleo" data-id="1">
-                        <div class="art-img-container">
-                            <img src="assets/obra_1.png" alt="Pintura al óleo de un paisaje montañoso al atardecer por Ángela María" loading="lazy">
-                            <div class="art-overlay">
-                                <span class="art-view-btn">Ver Detalles</span>
-                            </div>
+                    <!-- Colección 2: Serie Ciclo Femenino -->
+                    <div class="collection-card" data-collection-key="ciclo-femenino">
+                        <div class="collection-img-wrap">
+                            <img src="multimedia/Fluvia.jpg" alt="Serie: Ciclo Femenino por Ángela María" loading="lazy">
+                            <div class="collection-count-badge">3 Obras</div>
                         </div>
-                        <div class="art-info">
-                            <span class="art-category">Óleo sobre Lienzo</span>
-                            <h3 class="art-title">Cumbre Dorada</h3>
-                            <p class="art-price">Disponible</p>
+                        <div class="collection-body">
+                            <span class="collection-tagline">Trilogía Sagrada</span>
+                            <h3 class="collection-name">Serie: Ciclo Femenino</h3>
+                            <p class="collection-summary">1. Fluvia (Menarquía), 2. Renovación (Fase Folicular) y 3. Plenitud (Ovulación). Un tributo pictórico al fluir biológico y la potencia creadora de la mujer.</p>
+                            <a href="#galeria" class="collection-btn" data-filter-trigger="ciclo-femenino">
+                                <span>Ver Serie Completa</span>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </a>
                         </div>
-                    </article>
+                    </div>
 
-                    <!-- Artwork Card 2 -->
-                    <article class="art-card" data-category="acrilico" data-id="2">
-                        <div class="art-img-container">
-                            <img src="assets/obra_2.png" alt="Obra de arte abstracto acrílico con texturas doradas y azules por Ángela María" loading="lazy">
-                            <div class="art-overlay">
-                                <span class="art-view-btn">Ver Detalles</span>
-                            </div>
+                    <!-- Colección 3: Fauna & Vida Marina -->
+                    <div class="collection-card" data-collection-key="fauna-marina">
+                        <div class="collection-img-wrap">
+                            <img src="multimedia/LEON.jpg" alt="Fauna & Vida Marina por Ángela María" loading="lazy">
+                            <div class="collection-count-badge">3 Obras</div>
                         </div>
-                        <div class="art-info">
-                            <span class="art-category">Acrílico Impasto</span>
-                            <h3 class="art-title">Torrente Oceánico</h3>
-                            <p class="art-price">Disponible</p>
+                        <div class="collection-body">
+                            <span class="collection-tagline">Materia, Impasto &amp; Océano</span>
+                            <h3 class="collection-name">Fauna &amp; Vida Marina</h3>
+                            <p class="collection-summary">León, Pez León y Duplo. Óleos esculpidos con espátula gruesa y dinámicos mosaicos marinos que capturan la majestuosidad de la naturaleza viva.</p>
+                            <a href="#galeria" class="collection-btn" data-filter-trigger="fauna-marina">
+                                <span>Ver Obras</span>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </a>
                         </div>
-                    </article>
+                    </div>
 
-                    <!-- Artwork Card 3 -->
-                    <article class="art-card" data-category="acuarela" data-id="3">
-                        <div class="art-img-container">
-                            <img src="assets/obra_3.png" alt="Pintura botánica delicada en acuarela por Ángela María" loading="lazy">
-                            <div class="art-overlay">
-                                <span class="art-view-btn">Ver Detalles</span>
-                            </div>
+                    <!-- Colección 4: Retratos -->
+                    <div class="collection-card" data-collection-key="retratos">
+                        <div class="collection-img-wrap">
+                            <img src="multimedia/Levi Carlo.jpg" alt="Retratos por Ángela María" loading="lazy">
+                            <div class="collection-count-badge">3 Obras</div>
                         </div>
-                        <div class="art-info">
-                            <span class="art-category">Acuarela sobre Papel</span>
-                            <h3 class="art-title">Susurros de Eucalipto</h3>
-                            <p class="art-price">Colección Privada</p>
+                        <div class="collection-body">
+                            <span class="collection-tagline">Esencia &amp; Rostros</span>
+                            <h3 class="collection-name">Retratos</h3>
+                            <p class="collection-summary">Levi Carlo, Luan y William. Composiciones intimistas al óleo y técnica mixta que inmortalizan la luz, la memoria y el alma de sus protagonistas.</p>
+                            <a href="#galeria" class="collection-btn" data-filter-trigger="retratos">
+                                <span>Ver Retratos</span>
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                            </a>
                         </div>
-                    </article>
-
-                    <!-- Artwork Card 4 -->
-                    <article class="art-card" data-category="oleo" data-id="4">
-                        <div class="art-img-container">
-                            <img src="assets/obra_4.png" alt="Bodegón clásico al óleo con peras y paño de terciopelo por Ángela María" loading="lazy">
-                            <div class="art-overlay">
-                                <span class="art-view-btn">Ver Detalles</span>
-                            </div>
-                        </div>
-                        <div class="art-info">
-                            <span class="art-category">Óleo sobre Madera</span>
-                            <h3 class="art-title">Naturaleza Silente</h3>
-                            <p class="art-price">Disponible</p>
-                        </div>
-                    </article>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Artist Bio Section -->
+        <!-- Galería / Catálogo de Obras Curadas -->
+        <section class="gallery-section" id="galeria">
+            <div class="section-container">
+                
+                <div class="section-header">
+                    <span class="curatorial-label">Catálogo Completo</span>
+                    <h2 class="section-title">El Catálogo de Obras</h2>
+                    <div class="header-gold-line"></div>
+                    <p class="section-subtitle">
+                        Navega a través de las 12 obras originales organizadas por sus series conceptuales o filtra según la técnica pictórica.
+                    </p>
+                </div>
+
+                <!-- Filtros Curados por Serie / Colección -->
+                <div class="gallery-filter-wrapper">
+                    <div class="gallery-filters" id="gallery-filters" role="tablist" aria-label="Filtros de colecciones de arte">
+                        <button class="filter-btn active" id="filter-all" role="tab" aria-selected="true" data-filter="all">
+                            Todas las Obras <span class="filter-count">(12)</span>
+                        </button>
+                        <button class="filter-btn" id="filter-ser-es" role="tab" aria-selected="false" data-filter="ser-es">
+                            Serie: Ser-Es <span class="filter-count">(3)</span>
+                        </button>
+                        <button class="filter-btn" id="filter-ciclo-femenino" role="tab" aria-selected="false" data-filter="ciclo-femenino">
+                            Serie: Ciclo Femenino <span class="filter-count">(3)</span>
+                        </button>
+                        <button class="filter-btn" id="filter-fauna-marina" role="tab" aria-selected="false" data-filter="fauna-marina">
+                            Fauna &amp; Vida Marina <span class="filter-count">(3)</span>
+                        </button>
+                        <button class="filter-btn" id="filter-retratos" role="tab" aria-selected="false" data-filter="retratos">
+                            Retratos <span class="filter-count">(3)</span>
+                        </button>
+                    </div>
+
+                    <!-- Filtro Secundario por Técnica -->
+                    <div class="technique-filter-container">
+                        <label for="technique-select" class="technique-label">Técnica:</label>
+                        <select id="technique-select" class="technique-select" aria-label="Filtrar por técnica pictórica">
+                            <option value="all">Todas las técnicas</option>
+                            <option value="oleo">Óleo / Impasto</option>
+                            <option value="mixta">Técnica Mixta / Kraft</option>
+                            <option value="acrilico">Óleo &amp; Acrílico</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Grid de Galería Fluido (12 Obras Reales) -->
+                <div class="gallery-grid" id="gallery-grid" aria-live="polite">
+
+                    <!-- ==================== SERIE: SER-ES ==================== -->
+                    <!-- Obra 1: Sirena -->
+                    <article class="art-card" data-category="ser-es" data-technique="mixta" data-id="sirena">
+                        <div class="art-canvas-frame">
+                            <div class="art-lamp-spotlight"></div>
+                            <img src="multimedia/Sirena.jpg" alt="Sirena - Serie: Ser-Es por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    Examinar Obra
+                                </span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Serie: Ser-Es</span>
+                            <h3 class="art-title">Sirena</h3>
+                            <p class="art-subtitle-tag">Serie: Ser-Es &bull; 2026</p>
+                            <div class="art-card-footer">
+                                <span class="art-medium-tag">Técnica Mixta s/ Kraft</span>
+                                <span class="art-status available">Disponible</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Obra 2: Sátiro -->
+                    <article class="art-card" data-category="ser-es" data-technique="mixta" data-id="satiro">
+                        <div class="art-canvas-frame">
+                            <div class="art-lamp-spotlight"></div>
+                            <img src="multimedia/Sátiro.jpg" alt="Sátiro - Serie: Ser-Es por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    Examinar Obra
+                                </span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Serie: Ser-Es</span>
+                            <h3 class="art-title">Sátiro</h3>
+                            <p class="art-subtitle-tag">Serie: Ser-Es &bull; 2026</p>
+                            <div class="art-card-footer">
+                                <span class="art-medium-tag">Grafito &amp; Óleo s/ Kraft</span>
+                                <span class="art-status available">Disponible</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Obra 3: Lechuza -->
+                    <article class="art-card" data-category="ser-es" data-technique="mixta" data-id="lechuza">
+                        <div class="art-canvas-frame">
+                            <div class="art-lamp-spotlight"></div>
+                            <img src="multimedia/Lechuza.jpg" alt="Lechuza - Serie: Ser-Es por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    Examinar Obra
+                                </span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Serie: Ser-Es</span>
+                            <h3 class="art-title">Lechuza</h3>
+                            <p class="art-subtitle-tag">Serie: Ser-Es &bull; 2026</p>
+                            <div class="art-card-footer">
+                                <span class="art-medium-tag">Técnica Mixta &amp; Pastel</span>
+                                <span class="art-status available">Disponible</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ==================== SERIE: CICLO FEMENINO ==================== -->
+                    <!-- Obra 4: 1. Fluvia - Menarquía -->
+                    <article class="art-card" data-category="ciclo-femenino" data-technique="oleo" data-id="fluvia">
+                        <div class="art-canvas-frame">
+                            <div class="art-lamp-spotlight"></div>
+                            <img src="multimedia/Fluvia.jpg" alt="1. Fluvia - Menarquía por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    Examinar Obra
+                                </span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Serie: Ciclo Femenino</span>
+                            <h3 class="art-title">1. Fluvia - Menarquía</h3>
+                            <p class="art-subtitle-tag">Serie: Ciclo Femenino &bull; 2025</p>
+                            <div class="art-card-footer">
+                                <span class="art-medium-tag">Óleo sobre Lienzo</span>
+                                <span class="art-status available">Disponible</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Obra 5: 2. Renovación - Fase Folicular -->
+                    <article class="art-card" data-category="ciclo-femenino" data-technique="oleo" data-id="renovacion">
+                        <div class="art-canvas-frame">
+                            <div class="art-lamp-spotlight"></div>
+                            <img src="multimedia/Renovación.jpg" alt="2. Renovación - Fase Folicular por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    Examinar Obra
+                                </span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Serie: Ciclo Femenino</span>
+                            <h3 class="art-title">2. Renovación - Fase Folicular</h3>
+                            <p class="art-subtitle-tag">Serie: Ciclo Femenino &bull; 2025</p>
+                            <div class="art-card-footer">
+                                <span class="art-medium-tag">Óleo &amp; Pátina sobre Lienzo</span>
+                                <span class="art-status available">Disponible</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Obra 6: 3. Plenitud - Ovulación -->
+                    <article class="art-card" data-category="ciclo-femenino" data-technique="oleo" data-id="plenitud">
+                        <div class="art-canvas-frame">
+                            <div class="art-lamp-spotlight"></div>
+                            <img src="multimedia/Plenitud.jpg" alt="3. Plenitud - Ovulación por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    Examinar Obra
+                                </span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Serie: Ciclo Femenino</span>
+                            <h3 class="art-title">3. Plenitud - Ovulación</h3>
+                            <p class="art-subtitle-tag">Serie: Ciclo Femenino &bull; 2026</p>
+                            <div class="art-card-footer">
+                                <span class="art-medium-tag">Óleo sobre Lienzo</span>
+                                <span class="art-status available">Disponible</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ==================== FAUNA & VIDA MARINA ==================== -->
+                    <!-- Obra 7: León -->
+                    <article class="art-card" data-category="fauna-marina" data-technique="oleo" data-id="leon">
+                        <div class="art-canvas-frame">
+                            <div class="art-lamp-spotlight"></div>
+                            <img src="multimedia/LEON.jpg" alt="León por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    Examinar Obra
+                                </span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Fauna &amp; Vida Marina</span>
+                            <h3 class="art-title">León</h3>
+                            <p class="art-subtitle-tag">Fauna &amp; Fuerza &bull; 2026</p>
+                            <div class="art-card-footer">
+                                <span class="art-medium-tag">Óleo con Espátula</span>
+                                <span class="art-status available">Disponible</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Obra 8: Pez León -->
+                    <article class="art-card" data-category="fauna-marina" data-technique="oleo" data-id="pez-leon">
+                        <div class="art-canvas-frame">
+                            <div class="art-lamp-spotlight"></div>
+                            <img src="multimedia/PEZ LEON.jpg" alt="Pez León por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    Examinar Obra
+                                </span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Fauna &amp; Vida Marina</span>
+                            <h3 class="art-title">Pez León</h3>
+                            <p class="art-subtitle-tag">Sinfonía Marina &bull; 2026</p>
+                            <div class="art-card-footer">
+                                <span class="art-medium-tag">Óleo Texturizado</span>
+                                <span class="art-status available">Disponible</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Obra 9: Duplo -->
+                    <article class="art-card" data-category="fauna-marina" data-technique="oleo" data-id="duplo">
+                        <div class="art-canvas-frame">
+                            <div class="art-lamp-spotlight"></div>
+                            <img src="multimedia/DUPLO.jpg" alt="Duplo por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    Examinar Obra
+                                </span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Fauna &amp; Vida Marina</span>
+                            <h3 class="art-title">Duplo</h3>
+                            <p class="art-subtitle-tag">Sinfonía Marina &bull; 2025</p>
+                            <div class="art-card-footer">
+                                <span class="art-medium-tag">Óleo Pincelada Mosaico</span>
+                                <span class="art-status private">Colección Privada</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- ==================== RETRATOS ==================== -->
+                    <!-- Obra 10: Levi Carlo -->
+                    <article class="art-card" data-category="retratos" data-technique="oleo" data-id="levi-carlo">
+                        <div class="art-canvas-frame">
+                            <div class="art-lamp-spotlight"></div>
+                            <img src="multimedia/Levi Carlo.jpg" alt="Retrato al óleo de Levi Carlo por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    Examinar Obra
+                                </span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Retratos</span>
+                            <h3 class="art-title">Levi Carlo</h3>
+                            <p class="art-subtitle-tag">Retrato al Óleo &bull; 2025</p>
+                            <div class="art-card-footer">
+                                <span class="art-medium-tag">Óleo Tradicional</span>
+                                <span class="art-status private">Colección Privada</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Obra 11: Luan -->
+                    <article class="art-card" data-category="retratos" data-technique="acrilico" data-id="luan">
+                        <div class="art-canvas-frame">
+                            <div class="art-lamp-spotlight"></div>
+                            <img src="multimedia/Luan.jpg" alt="Retrato al óleo y acrílico de Luan por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    Examinar Obra
+                                </span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Retratos</span>
+                            <h3 class="art-title">Luan</h3>
+                            <p class="art-subtitle-tag">Retrato al Óleo y Acrílico &bull; 2026</p>
+                            <div class="art-card-footer">
+                                <span class="art-medium-tag">Óleo &amp; Acrílico</span>
+                                <span class="art-status available">Disponible</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Obra 12: William -->
+                    <article class="art-card" data-category="retratos" data-technique="oleo" data-id="william">
+                        <div class="art-canvas-frame">
+                            <div class="art-lamp-spotlight"></div>
+                            <img src="multimedia/William.jpg" alt="Retrato al óleo de William por Ángela María" loading="lazy">
+                            <div class="art-overlay">
+                                <span class="art-view-btn">
+                                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+                                    Examinar Obra
+                                </span>
+                            </div>
+                        </div>
+                        <div class="art-info">
+                            <span class="art-category">Retratos</span>
+                            <h3 class="art-title">William</h3>
+                            <p class="art-subtitle-tag">Retrato al Óleo &bull; 2025</p>
+                            <div class="art-card-footer">
+                                <span class="art-medium-tag">Óleo sobre Lienzo</span>
+                                <span class="art-status private">Colección Privada</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de la Artista con Mayor Profundidad Narrativa -->
         <section class="artist-section" id="artista">
             <div class="section-container">
                 <div class="artist-grid">
                     <div class="artist-image">
                         <div class="artist-frame">
-                            <img src="assets/profile.jpg" alt="Retrato fotográfico de la artista Ángela María" loading="lazy">
+                            <img src="assets/profile.jpg" alt="Retrato de la artista plástica Ángela María en su estudio" loading="lazy">
+                        </div>
+                        <div class="artist-signature-wrap">
+                            <span class="artist-signature-calligraphy">Ángela María</span>
                         </div>
                     </div>
                     <div class="artist-content">
-                        <p class="artist-tag">La Artista</p>
+                        <p class="artist-tag">Manifiesto &bull; La Creadora</p>
                         <h2 class="artist-name">Ángela María</h2>
                         <div class="artist-divider"></div>
-                        <p class="artist-text">
-                            Mi arte nace de una necesidad profunda de dialogar con la materia, el color y la textura. Cada uno de mis cuadros es un proceso físico e íntimo pintado a mano, donde busco capturar la sutileza de la luz natural y la fuerza dramática de las composiciones abstractas y figurativas.
+                        <p class="artist-lead">
+                            "No busco copiar la realidad visible, sino revelar el pulso invisible que habita en las criaturas, en los mitos olvidados y en la mirada humana."
                         </p>
                         <p class="artist-text">
-                            Trabajo principalmente con técnicas tradicionales de óleo sobre lienzo, construyendo capas con espátula y pincel grueso para otorgar relieve y carácter tridimensional a la obra. Asimismo, experimento con el acrílico fluido y las transparencias etéreas de la acuarela sobre papel de algodón.
+                            Mi proceso creativo es un diálogo directo con la materia física. Cada trazo de espátula sobre el lienzo y cada incisión de pastel sobre fondos carbón nacen de una exploración de la dualidad: la fuerza salvaje de la fauna conviviendo con la fragilidad del sueño.
                         </p>
-                        <blockquote class="artist-quote">
-                            "Pintar es dar forma visible a la vibración silenciosa del mundo."
-                        </blockquote>
+                        <p class="artist-text">
+                            Desde el bestiario marino donde los peces transitan hacia rosales y abismos geométricos, hasta los retratos psicológicos que capturan la luz interior de sus protagonistas, mi obra desafía los bordes del soporte tradicional para invitar al espectador a una contemplación íntima y trascendente.
+                        </p>
+                        <div class="artist-pillars">
+                            <div class="pillar-item">
+                                <span class="pillar-num">01</span>
+                                <span class="pillar-title">Impasto &amp; Espátula</span>
+                                <span class="pillar-desc">Construcción escultórica tridimensional del óleo con relieves de luz vibrante.</span>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-num">02</span>
+                                <span class="pillar-title">Simbolismo Onírico</span>
+                                <span class="pillar-desc">Composiciones donde la metamorfosis mitológica rompe la rigidez del marco.</span>
+                            </div>
+                            <div class="pillar-item">
+                                <span class="pillar-num">03</span>
+                                <span class="pillar-title">Retrato Psicológico</span>
+                                <span class="pillar-desc">Traducción cromática de la personalidad humana a través de paletas luminosas.</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- Sección de Contacto y Adquisición -->
         <section class="contact-section" id="contacto">
             <div class="section-container">
                 <div class="contact-card">
                     <div class="contact-header">
-                        <h2>Adquirir u Consultar</h2>
-                        <p>¿Interesado en alguna de las obras o deseas un cuadro por encargo? Ponte en contacto directamente con Ángela María.</p>
+                        <span class="curatorial-label">Adquisición &amp; Coleccionismo</span>
+                        <h2>Consultar u Ordenar Obra</h2>
+                        <div class="header-gold-line center"></div>
+                        <p>
+                            Las obras de Ángela María forman parte de colecciones privadas nacionales e internacionales. Puedes consultar la disponibilidad de una pieza original o solicitar un retrato personalizado por encargo.
+                        </p>
                     </div>
 
-                    <!-- Contact Form -->
+                    <!-- Formulario de Contacto Seguro -->
                     <form class="contact-form" id="contact-form" action="https://formspree.io/f/xvzyzjjl" method="POST" novalidate>
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="form-name">Nombre Completo</label>
-                                <input type="text" id="form-name" name="name" required placeholder="Ej. Juan Pérez" maxlength="80">
+                                <label for="form-name">Nombre del Coleccionista / Interesado</label>
+                                <input type="text" id="form-name" name="name" required placeholder="Ej. Carlos Mendoza" maxlength="80">
                                 <span class="error-msg" id="error-name" aria-live="polite"></span>
                             </div>
                             <div class="form-group">
                                 <label for="form-email">Correo Electrónico</label>
-                                <input type="email" id="form-email" name="email" required placeholder="nombre@correo.com">
+                                <input type="email" id="form-email" name="email" required placeholder="correo@ejemplo.com">
                                 <span class="error-msg" id="error-email" aria-live="polite"></span>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="form-artwork">Obra de Interés (Opcional)</label>
+                            <label for="form-artwork">Obra de Interés o Tipo de Encargo</label>
                             <select id="form-artwork" name="artwork">
-                                <option value="general">Consulta General / Encargo Especial</option>
-                                <option value="Cumbre Dorada">Cumbre Dorada (Óleo sobre Lienzo)</option>
-                                <option value="Torrente Oceánico">Torrente Oceánico (Acrílico Impasto)</option>
-                                <option value="Susurros de Eucalipto">Susurros de Eucalipto (Acuarela sobre Papel)</option>
-                                <option value="Naturaleza Silente">Naturaleza Silente (Óleo sobre Madera)</option>
+                                <option value="general">Consulta General / Retrato por Encargo</option>
+                                <option value="Sirena">Sirena (El Abismo y la Gracia) - Técnica Mixta</option>
+                                <option value="Despojo de la Máscara">Despojo de la Máscara (El Sátiro) - Kraft &amp; Óleo</option>
+                                <option value="Nocturna">Nocturna (La Dama Lechuza) - Técnica Mixta &amp; Pastel</option>
+                                <option value="Soberano">Soberano (León al Impasto con Espátula)</option>
+                                <option value="Fluvia">Fluvia (El Betta y el Rosal) - Óleo sobre Lienzo</option>
+                                <option value="Renovación">Renovación (La Liebre Sagrada) - Óleo y Acrílico</option>
+                                <option value="Pez León">Pez León (Danza de Espinas) - Óleo Mosaico</option>
+                                <option value="Duplo">Duplo (Miradas del Coral) - Óleo Mosaico</option>
+                                <option value="Luan">Luan (Aura Esmeralda) - Óleo y Acrílico</option>
+                                <option value="Levi Carlo">Levi Carlo (Luz de Infancia) - Retrato</option>
+                                <option value="William">William (Brisa del Caribe) - Retrato</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="form-message">Mensaje</label>
-                            <textarea id="form-message" name="message" required placeholder="Escribe tu consulta aquí..." rows="5" maxlength="1000"></textarea>
+                            <label for="form-message">Mensaje / Pregunta sobre la Obra</label>
+                            <textarea id="form-message" name="message" required placeholder="Escribe aquí tu consulta, interés de cotización o detalles para una obra por encargo..." rows="5" maxlength="1000"></textarea>
                             <span class="error-msg" id="error-message" aria-live="polite"></span>
                         </div>
 
-                        <!-- Form Status Message -->
+                        <!-- Estado del Formulario -->
                         <div class="form-status" id="form-status" aria-live="polite"></div>
 
-                        <button type="submit" class="btn btn-primary btn-block" id="btn-submit-form">Enviar Mensaje</button>
+                        <button type="submit" class="btn btn-primary btn-block" id="btn-submit-form">
+                            <span>Enviar Solicitud de Información</span>
+                        </button>
                     </form>
                 </div>
             </div>
@@ -235,32 +630,60 @@
     <!-- Footer -->
     <footer class="main-footer">
         <div class="footer-container">
-            <p class="footer-copy">&copy; 2026 Ángela María. Todos los derechos reservados.</p>
-            <p class="footer-security">Página protegida y optimizada mediante estándares OWASP / Secure Coding.</p>
+            <div class="footer-brand">
+                <span class="footer-logo">Ángela María <span class="logo-dot">.</span></span>
+                <p class="footer-tagline">Bellas Artes &bull; Simbolismo &bull; Expresionismo Texturizado</p>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p class="footer-copy">&copy; 2026 Ángela María. Todos los derechos reservados sobre las obras visuales y textos.</p>
+                <p class="footer-security">Galería digital protegida con estándares OWASP / Secure Coding &bull; Hecho a medida.</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Lightbox Modal (Details) -->
+    <!-- Lightbox Modal con Visor de Museo y Modo "Ver en Espacio" -->
     <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-art-title">
         <div class="lightbox-overlay" id="lightbox-overlay"></div>
-        <div class="lightbox-content">
-            <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar modal de detalles">
+        <div class="lightbox-content" id="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar ficha de la obra">
                 <svg viewBox="0 0 24 24" width="24" height="24">
                     <path d="M18 6L6 18M6 6l12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
-            <div class="lightbox-grid">
-                <div class="lightbox-image-wrapper">
-                    <img id="modal-art-image" src="" alt="Exhibición a pantalla completa">
+            
+            <!-- Barra de Herramientas del Lightbox (Zoom & Ver en Pared) -->
+            <div class="lightbox-toolbar">
+                <button class="toolbar-btn" id="btn-toggle-wall" aria-label="Simular obra en una pared de sala">
+                    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><rect x="7" y="7" width="10" height="10"></rect></svg>
+                    <span id="wall-btn-text">Ver en Sala / Espacio</span>
+                </button>
+            </div>
+
+            <div class="lightbox-grid" id="lightbox-grid-view">
+                
+                <!-- Contenedor Visual de la Pintura -->
+                <div class="lightbox-image-stage" id="lightbox-stage">
+                    <div class="gallery-spotlight-beam"></div>
+                    <div class="framed-canvas-wrapper" id="canvas-wrapper">
+                        <img id="modal-art-image" src="" alt="Exhibición a pantalla completa">
+                    </div>
                 </div>
+
+                <!-- Panel Curatorial & Ficha Técnica -->
                 <div class="lightbox-info">
-                    <span class="lightbox-tag" id="modal-art-category">Técnica</span>
+                    <span class="lightbox-collection" id="modal-art-category">Colección</span>
                     <h2 class="lightbox-title" id="modal-art-title">Título de la Obra</h2>
+                    <p class="lightbox-subtitle" id="modal-art-subtitle">Subtítulo poético</p>
                     
                     <div class="lightbox-details-grid">
                         <div class="detail-item">
                             <span class="detail-label">Medidas</span>
                             <span class="detail-val" id="modal-art-size">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Técnica</span>
+                            <span class="detail-val" id="modal-art-medium">-</span>
                         </div>
                         <div class="detail-item">
                             <span class="detail-label">Soporte</span>
@@ -270,23 +693,32 @@
                             <span class="detail-label">Año</span>
                             <span class="detail-val" id="modal-art-year">-</span>
                         </div>
-                        <div class="detail-item">
-                            <span class="detail-label">Estado</span>
-                            <span class="detail-val" id="modal-art-status">-</span>
+                        <div class="detail-item span-2">
+                            <span class="detail-label">Estado de la Obra</span>
+                            <span class="detail-val status-pill" id="modal-art-status">-</span>
                         </div>
                     </div>
 
-                    <p class="lightbox-description" id="modal-art-description">
-                        Descripción detallada de la pintura, expresando los matices, inspiración y texturas.
-                    </p>
+                    <div class="curatorial-note">
+                        <span class="curatorial-note-label">Nota Curatorial</span>
+                        <p class="lightbox-description" id="modal-art-description">
+                            Descripción de la obra.
+                        </p>
+                    </div>
 
-                    <button class="btn btn-primary btn-block" id="modal-btn-inquire">Consultar Adquisición</button>
+                    <div class="modal-actions">
+                        <button class="btn btn-primary btn-block" id="modal-btn-inquire">
+                            <span>Consultar por WhatsApp con la Artista</span>
+                            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        </button>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>
 
-    <!-- Script -->
+    <!-- Script de Lógica -->
     <script src="index.js"></script>
 </body>
 </html>

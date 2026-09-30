@@ -1,0 +1,12 @@
+# Exclude raw archives
+*.zip
+*.tar.gz
+*.rar
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Logs
+*.log
