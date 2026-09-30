@@ -195,8 +195,8 @@ const ARTWORKS_DATABASE = {
         size: "65 x 50 cm",
         support: "Lienzo sobre Bastidor de Madera",
         year: "2026",
-        status: "Disponible",
-        isAvailable: true,
+        status: "Colección Privada",
+        isAvailable: false,
         image: "multimedia/Luan.jpg",
         description: "Una mirada serena y contemplativa envuelta en un aura luminosa de tonos menta y aguamarina. El modelado sutil del rostro captura la juventud, los anhelos y el silencio interior, logrando una presencia viva que trasciende los límites del bastidor."
     },
