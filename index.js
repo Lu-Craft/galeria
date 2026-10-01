@@ -372,58 +372,20 @@ function initMobileBottomBar() {
    2. FILTROS MULTICRITERIO DE LA GALERÍA (Colecciones + Técnica)
    ========================================================================== */
 function initGalleryFilters() {
-    const gallerySection = document.getElementById("galeria");
     const filtersContainer = document.getElementById("gallery-filters");
     const filterButtons = document.querySelectorAll(".filter-btn");
     const techniqueSelect = document.getElementById("technique-select");
     const artCards = document.querySelectorAll(".art-card");
-    const atmosphereBadge = document.getElementById("gallery-theme-badge");
+    const ambientLayer = document.getElementById("gallery-ambient-layer");
 
     if (!filtersContainer && !techniqueSelect) return;
 
     let activeCategory = "all";
     let activeTechnique = "all";
 
-    const themeAtmospheres = {
-        "ser-es": {
-            icon: "✏️",
-            badge: "Atmósfera: Carboncillo & Tiza",
-            desc: "Trazados expresivos de carboncillo, tiza blanca y papel kraft natural."
-        },
-        "ciclo-femenino": {
-            icon: "🌿",
-            badge: "Atmósfera: Ecosistema Botánico",
-            desc: "Aguas profundas, rosas carmesí, follaje salvaje y frutos místicos."
-        },
-        "fauna-marina": {
-            icon: "🌊",
-            badge: "Atmósfera: Océano Profundo",
-            desc: "Aguas turquesas y cobalto con caústicas de luz solar y destellos dorados."
-        },
-        "retratos": {
-            icon: "📐",
-            badge: "Atmósfera: Bocetos de Atelier",
-            desc: "Muro de estudio con bocetos anatómicos de rostros, miradas y proporciones."
-        }
-    };
-
-    const updateGalleryTheme = (themeKey) => {
-        if (gallerySection) {
-            gallerySection.setAttribute("data-active-theme", themeKey);
-        }
-
-        if (atmosphereBadge) {
-            const themeInfo = themeAtmospheres[themeKey];
-            if (themeInfo) {
-                atmosphereBadge.innerHTML = `
-                    <span class="badge-icon">${themeInfo.icon}</span>
-                    <span class="badge-text"><strong>${themeInfo.badge}:</strong> ${themeInfo.desc}</span>
-                `;
-                atmosphereBadge.classList.add("visible");
-            } else {
-                atmosphereBadge.classList.remove("visible");
-                atmosphereBadge.innerHTML = "";
-            }
+    const updateAmbientSynergy = (category) => {
+        if (ambientLayer) {
+            ambientLayer.setAttribute("data-ambient", category);
         }
     };
 
@@ -452,9 +414,12 @@ function initGalleryFilters() {
             }
         });
 
-        // Actualizar el fondo temático dinámico de la galería
-        updateGalleryTheme(activeCategory);
+        // Actualizar sinergia ambiental pictórica
+        updateAmbientSynergy(activeCategory);
     };
+
+    // Inicializar estado de sinergia
+    updateAmbientSynergy(activeCategory);
 
     // Filtros de Categoría / Colección
     if (filtersContainer) {
@@ -510,9 +475,6 @@ function initGalleryFilters() {
             applyFilters();
         });
     });
-
-    // Inicializar estado del tema
-    updateGalleryTheme(activeCategory);
 }
 
 /* ==========================================================================

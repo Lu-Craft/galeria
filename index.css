@@ -710,9 +710,10 @@ img {
 }
 
 /* ==========================================================================
-   FONDOS TEMÁTICOS PERSONALIZADOS POR SERIE ARTÍSTICA (GALERÍA VIVA)
+   CAPA AMBIENTAL DE SINERGIA PICTÓRICA POR SERIE (DINÁMICA, VECTORIAL & SUTIL)
+   Inspirada fielmente en los trazos, materiales y temáticas de las obras reales
    ========================================================================== */
-.gallery-thematic-backdrop {
+.gallery-ambient-layer {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -722,156 +723,239 @@ img {
     overflow: hidden;
 }
 
-.thematic-layer {
+.ambient-sublayer {
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
     opacity: 0;
-    transform: scale(1.04);
-    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    pointer-events: none;
+    transform: scale(1.02);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
     will-change: opacity, transform;
 }
 
-/* 1. Serie: Ser-Es (Carboncillo & Tiza) */
-.thematic-layer-ser-es {
-    background-image: url('assets/theme_ser_es.jpg');
-    background-position: center 30%;
-}
-
-/* 2. Serie: Ciclo Femenino (Ecosistema Botánico, Rosas, Frutos & Agua Profunda) */
-.thematic-layer-ciclo-femenino {
-    background-image: url('assets/theme_ciclo_femenino.jpg');
-    background-position: center 35%;
-}
-
-/* 3. Fauna & Vida Marina (Océano Profundo, Caústicas & Luz Solar) */
-.thematic-layer-fauna-marina {
-    background-image: url('assets/theme_fauna_marina.jpg');
-    background-position: center center;
-}
-
-/* 4. Retratos (Bocetos Anatómicos de Taller, Miradas & Proporciones) */
-.thematic-layer-retratos {
-    background-image: url('assets/theme_retratos.jpg');
-    background-position: center 25%;
-}
-
-/* Activación por selección de filtro de colección */
-.gallery-section[data-active-theme="ser-es"] .thematic-layer-ser-es,
-.gallery-section[data-active-theme="ciclo-femenino"] .thematic-layer-ciclo-femenino,
-.gallery-section[data-active-theme="fauna-marina"] .thematic-layer-fauna-marina,
-.gallery-section[data-active-theme="retratos"] .thematic-layer-retratos {
-    opacity: 0.88;
+/* Activación por selección de serie */
+.gallery-ambient-layer[data-ambient="ser-es"] .ambient-ser-es,
+.gallery-ambient-layer[data-ambient="ciclo-femenino"] .ambient-ciclo-femenino,
+.gallery-ambient-layer[data-ambient="fauna-marina"] .ambient-fauna-marina,
+.gallery-ambient-layer[data-ambient="retratos"] .ambient-retratos {
+    opacity: 1;
     transform: scale(1);
 }
 
-/* Velo ambiental armonizador de luz y contraste */
-.thematic-ambient-overlay {
+/* 1. SERIE SER-ES (Carboncillo, tiza blanca, matiz de papel kraft y polvo gestual) */
+.ambient-kraft-tint {
     position: absolute;
     inset: 0;
-    z-index: 2;
+    background: radial-gradient(circle at 80% 20%, rgba(210, 185, 155, 0.22) 0%, rgba(246, 241, 233, 0.04) 60%),
+                radial-gradient(circle at 15% 85%, rgba(195, 170, 140, 0.18) 0%, transparent 50%);
+}
+
+.charcoal-stroke {
+    position: absolute;
     pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.8s ease, background 0.8s ease;
+    filter: drop-shadow(0 2px 6px rgba(30, 24, 20, 0.12));
 }
 
-.gallery-section:not([data-active-theme="all"]) .thematic-ambient-overlay {
-    opacity: 1;
+.stroke-top-left {
+    top: 3%;
+    left: -2%;
+    width: 440px;
+    height: 220px;
+    transform: rotate(-4deg);
+    opacity: 0.75;
 }
 
-.gallery-section[data-active-theme="ser-es"] .thematic-ambient-overlay {
-    background: radial-gradient(circle at 50% 30%, rgba(246, 241, 233, 0.28) 0%, rgba(238, 230, 219, 0.58) 60%, rgba(222, 210, 195, 0.85) 100%);
+.stroke-bottom-right {
+    bottom: 5%;
+    right: -2%;
+    width: 460px;
+    height: 230px;
+    transform: rotate(3deg);
+    opacity: 0.75;
 }
 
-.gallery-section[data-active-theme="ciclo-femenino"] .thematic-ambient-overlay {
-    background: radial-gradient(circle at 50% 30%, rgba(248, 244, 239, 0.22) 0%, rgba(240, 232, 224, 0.55) 60%, rgba(226, 215, 204, 0.82) 100%);
+.charcoal-stick-prop {
+    position: absolute;
+    top: 14%;
+    right: 5%;
+    width: 65px;
+    height: 13px;
+    background: linear-gradient(135deg, #1f1b18 0%, #2f2723 60%, #151210 100%);
+    border-radius: 2px 4px 3px 2px;
+    transform: rotate(-18deg);
+    box-shadow: 0 4px 12px rgba(25, 20, 18, 0.18);
+    opacity: 0.35;
 }
 
-.gallery-section[data-active-theme="fauna-marina"] .thematic-ambient-overlay {
-    background: radial-gradient(circle at 50% 30%, rgba(246, 246, 244, 0.22) 0%, rgba(232, 242, 246, 0.52) 60%, rgba(212, 229, 236, 0.82) 100%);
-}
-
-.gallery-section[data-active-theme="retratos"] .thematic-ambient-overlay {
-    background: radial-gradient(circle at 50% 30%, rgba(247, 244, 239, 0.26) 0%, rgba(241, 234, 226, 0.58) 60%, rgba(228, 218, 206, 0.85) 100%);
-}
-
-/* Sutil realce de legibilidad del encabezado y filtros cuando un tema está activo */
-.gallery-section:not([data-active-theme="all"]) .section-header {
-    background: rgba(253, 251, 247, 0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 2.2rem 2.5rem;
-    border-radius: 20px;
-    border: 1px solid rgba(196, 181, 166, 0.45);
-    box-shadow: 0 12px 35px rgba(45, 36, 30, 0.06);
-    margin-bottom: 2.5rem;
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.gallery-section:not([data-active-theme="all"]) .gallery-filter-wrapper {
-    background: rgba(253, 251, 247, 0.85);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 1rem 1.6rem;
-    border-radius: 9999px;
-    border: 1px solid rgba(196, 181, 166, 0.45);
-    box-shadow: 0 8px 24px rgba(45, 36, 30, 0.05);
-    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-/* Badge Curatorial de Atmósfera de la Serie */
-.gallery-theme-badge-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-    min-height: 44px;
-}
-
-.gallery-theme-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
-    padding: 0.6rem 1.45rem;
-    background: rgba(253, 251, 247, 0.95);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(184, 92, 56, 0.35);
-    border-radius: 9999px;
-    font-family: var(--font-sans);
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--color-text-primary);
-    box-shadow: 0 6px 20px rgba(184, 92, 56, 0.12);
-    opacity: 0;
-    transform: translateY(-8px) scale(0.96);
+.charcoal-dust-mote {
+    position: absolute;
+    background: rgba(45, 36, 30, 0.35);
+    border-radius: 50%;
     pointer-events: none;
-    transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    animation: floatMote 8s ease-in-out infinite alternate;
 }
 
-.gallery-theme-badge.visible {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    pointer-events: auto;
+.mote-1 { width: 4px; height: 4px; top: 22%; left: 8%; animation-delay: 0s; }
+.mote-2 { width: 3px; height: 3px; top: 48%; right: 12%; animation-delay: 2.5s; }
+.mote-3 { width: 5px; height: 5px; bottom: 18%; left: 16%; animation-delay: 4s; }
+
+@keyframes floatMote {
+    0% { transform: translateY(0) translateX(0); opacity: 0.25; }
+    50% { transform: translateY(-15px) translateX(8px); opacity: 0.55; }
+    100% { transform: translateY(-25px) translateX(-5px); opacity: 0.2; }
 }
 
-.gallery-theme-badge .badge-icon {
-    font-size: 1.15rem;
-    display: inline-flex;
-    align-items: center;
+/* 2. SERIE CICLO FEMENINO (Ecosistema botánico: pétalos carmín, frutos silvestres, follaje y agua) */
+.ambient-water-glow {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 10% 25%, rgba(184, 92, 56, 0.12) 0%, transparent 45%),
+                radial-gradient(circle at 88% 70%, rgba(196, 52, 60, 0.1) 0%, rgba(26, 45, 62, 0.08) 55%, transparent 80%);
 }
 
-.gallery-theme-badge .badge-text {
-    line-height: 1.4;
+.botanical-petal {
+    position: absolute;
+    background: linear-gradient(135deg, rgba(205, 55, 68, 0.48) 0%, rgba(160, 35, 48, 0.38) 100%);
+    border-radius: 60% 0 60% 50%;
+    box-shadow: 0 4px 10px rgba(180, 40, 50, 0.1);
+    pointer-events: none;
+    animation: petalDrift 10s ease-in-out infinite alternate;
 }
 
-.gallery-theme-badge .badge-text strong {
-    color: var(--color-siena);
-    font-weight: 600;
+.petal-1 { width: 22px; height: 16px; top: 18%; left: 6%; transform: rotate(25deg); animation-duration: 9s; }
+.petal-2 { width: 18px; height: 14px; top: 40%; right: 7%; transform: rotate(-35deg); animation-duration: 12s; animation-delay: 2s; }
+.petal-3 { width: 24px; height: 18px; bottom: 22%; left: 12%; transform: rotate(15deg); animation-duration: 11s; animation-delay: 4s; }
+
+.botanical-leaf {
+    position: absolute;
+    width: 26px;
+    height: 15px;
+    background: linear-gradient(135deg, rgba(82, 108, 74, 0.32) 0%, rgba(45, 68, 40, 0.22) 100%);
+    border-radius: 70% 0 70% 0;
+    top: 32%;
+    left: 9%;
+    transform: rotate(-20deg);
+    animation: petalDrift 13s ease-in-out infinite alternate;
 }
+
+.wild-berry {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: radial-gradient(circle at 35% 35%, #5d2842 0%, #2b1122 70%);
+    border-radius: 50%;
+    top: 24%;
+    right: 9%;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.16);
+    opacity: 0.5;
+}
+
+.botanical-branch-svg {
+    position: absolute;
+    top: 5%;
+    right: -30px;
+    width: 320px;
+    height: 420px;
+    pointer-events: none;
+    opacity: 0.65;
+}
+
+@keyframes petalDrift {
+    0% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-16px) rotate(10deg); }
+    100% { transform: translateY(-28px) rotate(-6deg); }
+}
+
+/* 3. FAUNA & VIDA MARINA (Caústicas oceánicas, rayos dorados solares, burbujas y chispas) */
+.ambient-caustics-light {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 15%, rgba(68, 148, 175, 0.14) 0%, rgba(30, 80, 105, 0.05) 50%, transparent 80%),
+                radial-gradient(circle at 85% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 45%);
+}
+
+.sunbeam-streak {
+    position: absolute;
+    width: 180px;
+    height: 100%;
+    top: 0;
+    background: linear-gradient(125deg, rgba(255, 245, 220, 0.07) 0%, rgba(255, 245, 220, 0.02) 40%, transparent 70%);
+    pointer-events: none;
+    transform: rotate(-15deg);
+}
+
+.beam-1 { left: 15%; }
+.beam-2 { right: 25%; }
+
+.marine-bubble {
+    position: absolute;
+    border: 1px solid rgba(135, 206, 235, 0.35);
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.4) 0%, rgba(135, 206, 235, 0.08) 70%);
+    border-radius: 50%;
+    animation: bubbleFloat 7s ease-in-out infinite alternate;
+}
+
+.bubble-1 { width: 12px; height: 12px; bottom: 25%; left: 8%; animation-delay: 0s; }
+.bubble-2 { width: 16px; height: 16px; bottom: 15%; right: 10%; animation-delay: 2s; }
+.bubble-3 { width: 8px; height: 8px; top: 35%; left: 14%; animation-delay: 3.5s; }
+
+.lion-golden-spark {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: radial-gradient(circle, #f3c258 0%, #b85c38 80%);
+    border-radius: 50%;
+    box-shadow: 0 0 8px #f3c258;
+    animation: sparkGlow 3s ease-in-out infinite alternate;
+}
+
+.spark-1 { top: 28%; right: 14%; animation-delay: 0.5s; }
+.spark-2 { bottom: 32%; right: 18%; animation-delay: 2s; }
+
+@keyframes bubbleFloat {
+    0% { transform: translateY(0); opacity: 0.3; }
+    50% { transform: translateY(-18px) translateX(6px); opacity: 0.65; }
+    100% { transform: translateY(-36px) translateX(-4px); opacity: 0.2; }
+}
+
+@keyframes sparkGlow {
+    0% { opacity: 0.2; transform: scale(0.8); }
+    100% { opacity: 0.75; transform: scale(1.3); }
+}
+
+/* 4. RETRATOS (Bocetos anatómicos clásicos de taller, proporciones, mirada y líneas de estudio) */
+.ambient-studio-light {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 20% 30%, rgba(215, 195, 175, 0.18) 0%, transparent 60%),
+                radial-gradient(circle at 80% 70%, rgba(184, 92, 56, 0.07) 0%, transparent 50%);
+}
+
+.portrait-sketch {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.5;
+    transition: opacity 0.6s ease;
+}
+
+.sketch-eye {
+    top: 14%;
+    left: -10px;
+    width: 260px;
+    height: 160px;
+    transform: rotate(-5deg);
+}
+
+.sketch-lips {
+    bottom: 12%;
+    right: 10px;
+    width: 230px;
+    height: 150px;
+    transform: rotate(4deg);
+}
+
 
 /* Barra de Filtros y Búsqueda */
 .gallery-curatorial-bar {
@@ -2319,25 +2403,6 @@ img {
     /* Catálogo & Filtros Estilo App con Scroll Horizontal */
     .gallery-section {
         padding: 4.5rem 1.25rem 4rem;
-    }
-
-    .gallery-section:not([data-active-theme="all"]) .section-header {
-        padding: 1.5rem 1.25rem;
-        border-radius: 16px;
-    }
-
-    .gallery-section:not([data-active-theme="all"]) .gallery-filter-wrapper {
-        border-radius: 18px;
-        padding: 0.85rem 0.85rem;
-    }
-
-    .gallery-theme-badge {
-        font-size: 0.78rem;
-        padding: 0.5rem 1rem;
-        text-align: center;
-        border-radius: 14px;
-        flex-direction: column;
-        gap: 0.35rem;
     }
 
     .gallery-curatorial-bar {
