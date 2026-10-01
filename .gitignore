@@ -14,3 +14,8 @@ Desktop.ini
 # Temporary test profiles & screenshots
 chrome-temp-*/
 wall_*.png
+
+# Node dependencies
+node_modules/
+package-lock.json
+package.json

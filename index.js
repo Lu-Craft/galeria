@@ -25,11 +25,12 @@ const ARTWORKS_DATABASE = {
         heightCm: 80,
         support: "Papel Kraft Especial sobre Bastidor",
         year: "2026",
-        registrationCode: null,
+        registrationCode: "WE011",
+        certificateUrl: "multimedia/certificados/certificado_sirena.pdf",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Sirena.jpg",
-        description: "Obra insignia de la colección 'Serie: Ser-Es'. A través del dibujo orgánico al carboncillo y veladuras sobre papel kraft crudo, la artista desvela una criatura mitológica que emerge de la penumbra acuática. El soporte de tono tierra evoca pergaminos renacentistas mientras que la intensidad penetrante de la mirada desafía al espectador con un magnetismo poético ineludible."
+        description: "Obra insignia de la colección 'Serie: Ser-Es' (Registro Oficial WE011, 80 × 56 cm). A través del dibujo orgánico al carboncillo y veladuras sobre papel kraft crudo, la artista desvela una criatura mitológica que emerge de la penumbra acuática. El soporte de tono tierra evoca pergaminos renacentistas mientras que la intensidad penetrante de la mirada desafía al espectador con un magnetismo poético ineludible."
     },
     "satiro": {
         id: "satiro",
@@ -44,11 +45,12 @@ const ARTWORKS_DATABASE = {
         heightCm: 80,
         support: "Papel Tono Kraft Tratado",
         year: "2026",
-        registrationCode: null,
+        registrationCode: "WE012",
+        certificateUrl: "multimedia/certificados/certificado_satiro.pdf",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Sátiro.jpg",
-        description: "Pieza de la colección 'Serie: Ser-Es'. Un estudio psicológico profundo sobre la dualidad humana y animal. La figura caprina sostiene la máscara en un gesto de vulnerabilidad y renuncia. Con un trazo enérgico y expresivo, Ángela María explora los mitos como espejos de los dilemas íntimos y emocionales del ser contemporáneo."
+        description: "Pieza de la colección 'Serie: Ser-Es' (Registro Oficial WE012, 80 × 56 cm). Un estudio psicológico profundo sobre la dualidad humana y animal. La figura caprina sostiene la máscara en un gesto de vulnerabilidad y renuncia. Con un trazo enérgico y expresivo, Ángela María explora los mitos como espejos de los dilemas íntimos y emocionales del ser contemporáneo."
     },
     "lechuza": {
         id: "lechuza",
@@ -63,11 +65,12 @@ const ARTWORKS_DATABASE = {
         heightCm: 80,
         support: "Lienzo Texturizado",
         year: "2026",
-        registrationCode: null,
+        registrationCode: "WE013",
+        certificateUrl: "multimedia/certificados/certificado_lechuza.pdf",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Lechuza.jpg",
-        description: "Composición de la colección 'Serie: Ser-Es' donde la presencia alada y la anatomía rapaz se funden en una sola esencia vigía. Las texturas vibrantes y la paleta crepuscular de ocres, sepias y blancos nacarados transportan a una atmósfera ritual impregnada de silencio, enigma y sabiduría ancestral."
+        description: "Composición de la colección 'Serie: Ser-Es' (Registro Oficial WE013, 80 × 56 cm) donde la presencia alada y la anatomía rapaz se funden en una sola esencia vigía. Las texturas vibrantes y la paleta crepuscular de ocres, sepias y blancos nacarados transportan a una atmósfera ritual impregnada de silencio, enigma y sabiduría ancestral."
     },
 
     // -------------------------------------------------------------
@@ -87,6 +90,7 @@ const ARTWORKS_DATABASE = {
         support: "Bastidor de Algodón Profesional",
         year: "2026",
         registrationCode: "WE004",
+        certificateUrl: "multimedia/certificados/certificado_fluvia.pdf",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Fluvia.jpg",
@@ -106,6 +110,7 @@ const ARTWORKS_DATABASE = {
         support: "Lienzo de Algodón Tensorizado",
         year: "2026",
         registrationCode: "WE005",
+        certificateUrl: "multimedia/certificados/certificado_renovacion.pdf",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Renovación.jpg",
@@ -125,6 +130,7 @@ const ARTWORKS_DATABASE = {
         support: "Lienzo Tensorizado Profesional",
         year: "2026",
         registrationCode: "WE006",
+        certificateUrl: "multimedia/certificados/certificado_plenitud.pdf",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Plenitud.jpg",
@@ -148,6 +154,7 @@ const ARTWORKS_DATABASE = {
         support: "Lienzo sobre Bastidor Tensorizado",
         year: "2026",
         registrationCode: "WE002",
+        certificateUrl: "multimedia/certificados/certificado_leon.pdf",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/LEON.jpg",
@@ -167,6 +174,7 @@ const ARTWORKS_DATABASE = {
         support: "Lienzo sobre Bastidor Doble",
         year: "2025",
         registrationCode: "WE001",
+        certificateUrl: "multimedia/certificados/certificado_pez_leon.pdf",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/PEZ LEON.jpg",
@@ -186,6 +194,7 @@ const ARTWORKS_DATABASE = {
         support: "Lienzo Tensorizado de Galería",
         year: "2023",
         registrationCode: "WE003",
+        certificateUrl: "multimedia/certificados/certificado_duplo.pdf",
         status: "Colección Privada",
         isAvailable: false,
         image: "multimedia/DUPLO.jpg",
@@ -209,6 +218,7 @@ const ARTWORKS_DATABASE = {
         support: "Lienzo de Algodón Fino",
         year: "2026",
         registrationCode: "WE009",
+        certificateUrl: "multimedia/certificados/certificado_levi_carlo.pdf",
         status: "Colección Privada",
         isAvailable: false,
         image: "multimedia/Levi Carlo.jpg",
@@ -228,6 +238,7 @@ const ARTWORKS_DATABASE = {
         support: "Lienzo sobre Bastidor de Madera",
         year: "2026",
         registrationCode: "WE008",
+        certificateUrl: "multimedia/certificados/certificado_luan.pdf",
         status: "Colección Privada",
         isAvailable: false,
         image: "multimedia/Luan.jpg",
@@ -247,6 +258,7 @@ const ARTWORKS_DATABASE = {
         support: "Lienzo de Grano Medio",
         year: "2025",
         registrationCode: "WE010",
+        certificateUrl: "multimedia/certificados/certificado_william.pdf",
         status: "Colección Privada",
         isAvailable: false,
         image: "multimedia/William.jpg",
@@ -661,10 +673,13 @@ function initLightbox() {
         if (modalSupport) modalSupport.textContent = artwork.support;
         if (modalYear) modalYear.textContent = artwork.year;
 
-        // Código de Registro Oficial y Certificado de Autenticidad
+        // Código de Registro Oficial y Certificado de Autenticidad Individual
         const regCodeItem = document.getElementById("modal-art-reg-item");
         const regCodeEl = document.getElementById("modal-art-regcode");
         const certRowEl = document.getElementById("modal-cert-row");
+        const certBtnEl = document.getElementById("modal-cert-btn");
+        const certLabelEl = document.getElementById("modal-cert-label");
+
         if (regCodeItem && regCodeEl) {
             if (artwork.registrationCode) {
                 regCodeItem.style.display = "flex";
@@ -673,8 +688,17 @@ function initLightbox() {
                 regCodeItem.style.display = "none";
             }
         }
-        if (certRowEl) {
-            certRowEl.style.display = artwork.registrationCode ? "flex" : "none";
+        if (certRowEl && certBtnEl) {
+            if (artwork.certificateUrl) {
+                certRowEl.style.display = "flex";
+                certBtnEl.href = artwork.certificateUrl;
+                certBtnEl.setAttribute("download", `Certificado_${artwork.registrationCode || 'Autenticidad'}_${artwork.title.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`);
+                if (certLabelEl) {
+                    certLabelEl.textContent = `Ver Certificado de Autenticidad (${artwork.registrationCode} - PDF Oficial)`;
+                }
+            } else {
+                certRowEl.style.display = "none";
+            }
         }
 
         // Actualizar contador de obra y categoría de barra superior
