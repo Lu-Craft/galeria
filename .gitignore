@@ -10,3 +10,7 @@ Desktop.ini
 
 # Logs
 *.log
+
+# Temporary test profiles & screenshots
+chrome-temp-*/
+wall_*.png

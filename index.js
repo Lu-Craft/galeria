@@ -220,6 +220,7 @@ const ARTWORKS_DATABASE = {
 
 document.addEventListener("DOMContentLoaded", () => {
     initMobileMenu();
+    initMobileBottomBar();
     initGalleryFilters();
     initLightbox();
     initContactForm();
@@ -232,41 +233,103 @@ document.addEventListener("DOMContentLoaded", () => {
 function initMobileMenu() {
     const menuToggle = document.getElementById("menu-toggle");
     const navMenu = document.getElementById("nav-menu");
+    const navBackdrop = document.getElementById("nav-backdrop");
+    const drawerCloseBtn = document.getElementById("nav-drawer-close");
     const navLinks = document.querySelectorAll(".nav-link");
 
     if (!menuToggle || !navMenu) return;
 
-    const toggleMenu = () => {
-        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
-        menuToggle.setAttribute("aria-expanded", !isExpanded);
-        menuToggle.classList.toggle("active");
-        navMenu.classList.toggle("active");
+    const openMenu = () => {
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.classList.add("active");
+        navMenu.classList.add("active");
+        if (navBackdrop) navBackdrop.classList.add("active");
+        document.body.style.overflow = "hidden";
     };
 
-    menuToggle.addEventListener("click", toggleMenu);
+    const closeMenu = () => {
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.classList.remove("active");
+        navMenu.classList.remove("active");
+        if (navBackdrop) navBackdrop.classList.remove("active");
+        document.body.style.overflow = "";
+    };
+
+    menuToggle.addEventListener("click", () => {
+        const isOpen = navMenu.classList.contains("active");
+        if (isOpen) closeMenu();
+        else openMenu();
+    });
+
+    if (drawerCloseBtn) {
+        drawerCloseBtn.addEventListener("click", closeMenu);
+    }
+
+    if (navBackdrop) {
+        navBackdrop.addEventListener("click", closeMenu);
+    }
 
     // Cerrar menú al hacer clic en cualquier enlace
     navLinks.forEach(link => {
-        link.addEventListener("click", () => {
-            if (navMenu.classList.contains("active")) {
-                toggleMenu();
-            }
-        });
+        link.addEventListener("click", closeMenu);
     });
 
     // Añadir sombra suave a la barra de navegación al hacer scroll
-    const navbar = document.querySelector(".navbar");
-    if (navbar) {
+    const header = document.getElementById("header");
+    if (header) {
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 40) {
-                navbar.style.boxShadow = "0 8px 32px rgba(0, 0, 0, 0.7)";
-                navbar.style.borderBottomColor = "rgba(207, 168, 89, 0.2)";
+            if (window.scrollY > 30) {
+                header.style.boxShadow = "0 4px 20px rgba(45, 36, 30, 0.08)";
+                header.style.borderBottomColor = "var(--color-frame-border)";
             } else {
-                navbar.style.boxShadow = "none";
-                navbar.style.borderBottomColor = "rgba(255, 255, 255, 0.08)";
+                header.style.boxShadow = "none";
+                header.style.borderBottomColor = "var(--color-frame-border-subtle)";
             }
         }, { passive: true });
     }
+}
+
+/* Barra Inferior Rápida en Móvil (Resalta sección activa al navegar) */
+function initMobileBottomBar() {
+    const bottomBar = document.getElementById("mobile-bottom-bar");
+    if (!bottomBar) return;
+
+    const navItems = {
+        hero: bottomBar.querySelector('[data-nav="hero"]'),
+        colecciones: bottomBar.querySelector('[data-nav="colecciones"]'),
+        galeria: bottomBar.querySelector('[data-nav="galeria"]'),
+        artista: bottomBar.querySelector('[data-nav="artista"]'),
+        contacto: bottomBar.querySelector('[data-nav="contacto"]')
+    };
+
+    const sectionIds = ["contacto", "artista", "galeria", "colecciones", "hero"];
+
+    const handleScroll = () => {
+        const scrollY = window.scrollY;
+        const viewportHeight = window.innerHeight;
+        let activeFound = "hero";
+
+        for (const id of sectionIds) {
+            const el = document.getElementById(id);
+            if (el) {
+                const rect = el.getBoundingClientRect();
+                if (rect.top <= viewportHeight * 0.4) {
+                    activeFound = id;
+                    break;
+                }
+            }
+        }
+
+        Object.keys(navItems).forEach(id => {
+            const item = navItems[id];
+            if (item) {
+                item.classList.toggle("active", id === activeFound);
+            }
+        });
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
 }
 
 /* ==========================================================================
@@ -378,10 +441,84 @@ function initLightbox() {
     const wallBtnText = document.getElementById("wall-btn-text");
     const lightboxStage = document.getElementById("lightbox-stage");
 
+    const artworkKeys = Object.keys(ARTWORKS_DATABASE);
+    let currentArtworkIndex = 0;
+    const prevBtn = document.getElementById("lightbox-prev");
+    const nextBtn = document.getElementById("lightbox-next");
+
     let lastActiveElement = null;
     let isWallMode = false;
 
     if (!galleryGrid || !modal) return;
+
+    // Analizador de dimensiones reales de la obra ("80 x 60 cm")
+    const parseArtworkDimensions = (sizeStr) => {
+        if (!sizeStr) return { heightCm: 80, widthCm: 60 };
+        const matches = sizeStr.match(/(\d+)\s*x\s*(\d+)/i);
+        if (matches) {
+            return {
+                heightCm: parseInt(matches[1], 10),
+                widthCm: parseInt(matches[2], 10)
+            };
+        }
+        return { heightCm: 80, widthCm: 60 };
+    };
+
+    // Actualizar escala arquitectónica de la obra en el muro de galería
+    const updateWallScale = (artworkId) => {
+        const artwork = ARTWORKS_DATABASE[artworkId];
+        const wrapper = document.getElementById("canvas-wrapper");
+        const scaleText = document.getElementById("wall-scale-text");
+        const stage = document.getElementById("lightbox-stage");
+        if (!artwork || !wrapper) return;
+
+        if (!isWallMode) {
+            wrapper.style.width = "";
+            wrapper.style.height = "";
+            wrapper.style.maxWidth = "";
+            wrapper.style.maxHeight = "";
+            return;
+        }
+
+        const dims = parseArtworkDimensions(artwork.size);
+        const stageH = stage && stage.clientHeight > 0 ? stage.clientHeight : (window.innerHeight * 0.7);
+        const stageW = stage && stage.clientWidth > 0 ? stage.clientWidth : (window.innerWidth * 0.5);
+        const isMobile = window.innerWidth <= 768;
+
+        // Proporción arquitectónica curatorial (Museo Eye-Level Hanging Rule):
+        // En una pared de exposición de ~2.8m, una obra de referencia de 80 cm ocupa aproximadamente
+        // el 43% de la altura del escenario en desktop y ~48% en móvil, permitiendo apreciar 
+        // con nitidez los detalles del cuadro sin chocar con el rodapié ni con los rieles del techo.
+        const targetPercent = isMobile ? 0.48 : 0.43;
+        const scale = (targetPercent * stageH) / 80;
+
+        let targetHeight = Math.round(dims.heightCm * scale);
+        let targetWidth = Math.round(dims.widthCm * scale);
+
+        // Limitar dimensiones para evitar desbordes o colisiones con flechas de navegación y rodapié:
+        const maxH = Math.round(stageH * (isMobile ? 0.52 : 0.50));
+        const maxW = Math.round(stageW * (isMobile ? 0.72 : 0.68));
+
+        if (targetHeight > maxH) {
+            const r = maxH / targetHeight;
+            targetHeight = maxH;
+            targetWidth = Math.round(targetWidth * r);
+        }
+        if (targetWidth > maxW) {
+            const r = maxW / targetWidth;
+            targetWidth = maxW;
+            targetHeight = Math.round(targetHeight * r);
+        }
+
+        wrapper.style.width = `${targetWidth}px`;
+        wrapper.style.height = `${targetHeight}px`;
+        wrapper.style.maxWidth = `${maxW}px`;
+        wrapper.style.maxHeight = `${maxH}px`;
+
+        if (scaleText) {
+            scaleText.innerHTML = `<strong>${artwork.title}</strong> &bull; ${dims.heightCm} × ${dims.widthCm} cm <span class="badge-ratio">(Escala 1:1 en Muro)</span>`;
+        }
+    };
 
     // Resetear modo de pared
     const resetWallMode = () => {
@@ -389,9 +526,16 @@ function initLightbox() {
         if (lightboxStage) lightboxStage.classList.remove("wall-mode");
         if (btnToggleWall) btnToggleWall.classList.remove("active");
         if (wallBtnText) wallBtnText.textContent = "Ver en Sala / Espacio";
+        const wrapper = document.getElementById("canvas-wrapper");
+        if (wrapper) {
+            wrapper.style.width = "";
+            wrapper.style.height = "";
+            wrapper.style.maxWidth = "";
+            wrapper.style.maxHeight = "";
+        }
     };
 
-    // Alternar modo de pared (Room Simulation)
+    // Alternar modo de pared (Room Simulation con Escala Real)
     if (btnToggleWall && lightboxStage) {
         btnToggleWall.addEventListener("click", () => {
             isWallMode = !isWallMode;
@@ -400,14 +544,24 @@ function initLightbox() {
             if (wallBtnText) {
                 wallBtnText.textContent = isWallMode ? "Ver en Primer Plano" : "Ver en Sala / Espacio";
             }
+            updateWallScale(artworkKeys[currentArtworkIndex]);
         });
     }
 
-    const openModal = (id) => {
+    window.addEventListener("resize", () => {
+        if (isWallMode) updateWallScale(artworkKeys[currentArtworkIndex]);
+    }, { passive: true });
+
+    const openModal = (id, preserveWallMode = false) => {
         const artwork = ARTWORKS_DATABASE[id];
         if (!artwork) return;
 
-        resetWallMode();
+        currentArtworkIndex = artworkKeys.indexOf(id);
+        if (currentArtworkIndex === -1) currentArtworkIndex = 0;
+
+        if (!preserveWallMode) {
+            resetWallMode();
+        }
 
         // Rellenar contenido curatorial
         modalImg.src = artwork.image;
@@ -420,6 +574,16 @@ function initLightbox() {
         if (modalSupport) modalSupport.textContent = artwork.support;
         if (modalYear) modalYear.textContent = artwork.year;
 
+        // Actualizar contador de obra y categoría de barra superior
+        const counterEl = document.getElementById("modal-art-counter");
+        if (counterEl) {
+            counterEl.textContent = `${String(currentArtworkIndex + 1).padStart(2, '0')} / ${String(artworkKeys.length).padStart(2, '0')}`;
+        }
+        const headerCatEl = document.getElementById("modal-art-header-cat");
+        if (headerCatEl) {
+            headerCatEl.textContent = artwork.category;
+        }
+
         if (modalStatus) {
             modalStatus.textContent = artwork.status;
             modalStatus.className = `detail-val status-pill ${artwork.isAvailable ? 'available' : 'sold'}`;
@@ -427,24 +591,52 @@ function initLightbox() {
 
         if (modalDescription) modalDescription.textContent = artwork.description;
 
-        // Configurar botón de consulta directa por WhatsApp
+        // Configurar botón de consulta directa de obra
         if (modalInquireBtn) {
             const statusNotice = artwork.isAvailable 
-                ? "Conocer Disponibilidad y Valor de Inversión"
-                : "Consultar Comisión o Pieza Similar";
-            
-            const whatsappMsg = encodeURIComponent(
-                `Hola Ángela María, tengo un gran interés en tu obra "${artwork.title}" (${artwork.medium}, ${artwork.size}) de la serie "${artwork.category}". Me gustaría solicitar información sobre ${artwork.isAvailable ? 'su valor de inversión y opciones de adquisición' : 'la posibilidad de encargar una obra similar por comisión'}.`
-            );
+                ? "Consultar Disponibilidad & Adquisición"
+                : "Solicitar Comisión o Encargo";
 
             modalInquireBtn.onclick = () => {
-                window.open(`https://wa.me/573000000000?text=${whatsappMsg}`, "_blank", "noopener,noreferrer");
+                closeModal();
+                
+                // Preseleccionar la obra en el formulario de contacto
+                const artworkSelect = document.getElementById("form-artwork");
+                if (artworkSelect) {
+                    for (let i = 0; i < artworkSelect.options.length; i++) {
+                        if (artworkSelect.options[i].text.toLowerCase().includes(artwork.title.toLowerCase())) {
+                            artworkSelect.selectedIndex = i;
+                            break;
+                        }
+                    }
+                }
+
+                // Desplazar suavemente a la sección de contacto
+                const contactSection = document.getElementById("contacto");
+                if (contactSection) {
+                    setTimeout(() => {
+                        contactSection.scrollIntoView({ behavior: "smooth" });
+                        const nameInput = document.getElementById("form-name");
+                        if (nameInput) nameInput.focus();
+                    }, 250);
+                }
             };
 
             const btnTextSpan = modalInquireBtn.querySelector("span");
             if (btnTextSpan) {
-                btnTextSpan.textContent = `${statusNotice} vía WhatsApp`;
+                btnTextSpan.textContent = statusNotice;
             }
+        }
+
+        // Resetear scroll del modal para que comience siempre desde arriba
+        const scrollBody = document.getElementById("lightbox-scroll-body");
+        if (scrollBody) {
+            scrollBody.scrollTop = 0;
+        }
+
+        // Si el usuario ya está en modo pared al navegar, actualizar la escala de inmediato
+        if (preserveWallMode && isWallMode) {
+            updateWallScale(id);
         }
 
         // Mostrar Modal (Accesibilidad ARIA)
@@ -468,6 +660,56 @@ function initLightbox() {
         }
     };
 
+    const navigateArtwork = (delta) => {
+        currentArtworkIndex = (currentArtworkIndex + delta + artworkKeys.length) % artworkKeys.length;
+        openModal(artworkKeys[currentArtworkIndex], true);
+    };
+
+    // Botones Siguiente / Anterior
+    if (prevBtn) {
+        prevBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            navigateArtwork(-1);
+        });
+    }
+
+    if (nextBtn) {
+        nextBtn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            navigateArtwork(1);
+        });
+    }
+
+    // Gestos táctiles de deslizamiento (Swipe) para dispositivos móviles
+    let touchStartX = 0;
+    let touchEndX = 0;
+    let touchStartY = 0;
+    let touchEndY = 0;
+
+    modal.addEventListener("touchstart", (e) => {
+        if (!e.touches || e.touches.length === 0) return;
+        touchStartX = e.touches[0].screenX;
+        touchStartY = e.touches[0].screenY;
+    }, { passive: true });
+
+    modal.addEventListener("touchend", (e) => {
+        if (!e.changedTouches || e.changedTouches.length === 0) return;
+        touchEndX = e.changedTouches[0].screenX;
+        touchEndY = e.changedTouches[0].screenY;
+
+        const diffX = touchEndX - touchStartX;
+        const diffY = touchEndY - touchStartY;
+
+        // Deslizar horizontalmente si el movimiento horizontal supera al vertical
+        if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 45) {
+            if (diffX < 0) {
+                navigateArtwork(1); // Deslizar izquierda -> siguiente obra
+            } else {
+                navigateArtwork(-1); // Deslizar derecha -> obra anterior
+            }
+        }
+    }, { passive: true });
+
     // Apertura desde la cuadrícula de la galería
     galleryGrid.addEventListener("click", (e) => {
         const card = e.target.closest(".art-card");
@@ -481,12 +723,16 @@ function initLightbox() {
     closeBtn.addEventListener("click", closeModal);
     overlay.addEventListener("click", closeModal);
 
-    // Eventos de teclado (Escape para cerrar, Tab circular)
+    // Eventos de teclado (Escape para cerrar, flechas para navegar, Tab circular)
     document.addEventListener("keydown", (e) => {
         if (!modal.classList.contains("active")) return;
 
         if (e.key === "Escape") {
             closeModal();
+        } else if (e.key === "ArrowLeft") {
+            navigateArtwork(-1);
+        } else if (e.key === "ArrowRight") {
+            navigateArtwork(1);
         }
 
         if (e.key === "Tab") {
@@ -687,7 +933,7 @@ function initContactForm() {
         })
         .catch(error => {
             statusDiv.className = "form-status error";
-            statusDiv.textContent = "No fue posible conectar con el servicio de correo. También puedes contactar directamente a la artista vía WhatsApp.";
+            statusDiv.textContent = "No fue posible conectar con el servicio de correo en este momento. Por favor intenta nuevamente más tarde.";
             console.warn("Información de envío:", error);
         })
         .finally(() => {
