@@ -387,6 +387,12 @@ function initGalleryFilters() {
             btn.classList.add("active");
             btn.setAttribute("aria-selected", "true");
 
+            // Centrar suavemente el chip activo dentro del carrusel horizontal móvil
+            if (filtersContainer) {
+                const scrollTarget = btn.offsetLeft - (filtersContainer.clientWidth / 2) + (btn.clientWidth / 2);
+                filtersContainer.scrollTo({ left: Math.max(0, scrollTarget), behavior: "smooth" });
+            }
+
             applyFilters();
         });
     }
@@ -411,6 +417,10 @@ function initGalleryFilters() {
                 const isSelected = button.getAttribute("data-filter") === targetFilter;
                 button.classList.toggle("active", isSelected);
                 button.setAttribute("aria-selected", isSelected ? "true" : "false");
+                if (isSelected && filtersContainer) {
+                    const scrollTarget = button.offsetLeft - (filtersContainer.clientWidth / 2) + (button.clientWidth / 2);
+                    filtersContainer.scrollTo({ left: Math.max(0, scrollTarget), behavior: "smooth" });
+                }
             });
 
             applyFilters();

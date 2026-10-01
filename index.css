@@ -757,6 +757,7 @@ img {
     color: var(--color-siena);
 }
 
+.gallery-filter-wrapper,
 .filter-controls {
     display: flex;
     justify-content: space-between;
@@ -764,32 +765,41 @@ img {
     gap: 1.5rem;
     flex-wrap: wrap;
     padding-bottom: 1.8rem;
+    margin-bottom: 2.5rem;
     border-bottom: 1px solid var(--color-frame-border-subtle);
 }
 
+.gallery-filters,
 .filter-buttons {
     display: flex;
     gap: 0.65rem;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .filter-btn {
     background: var(--color-bg-card);
     border: 1px solid var(--color-frame-border);
     color: var(--color-text-secondary);
-    padding: 0.55rem 1.25rem;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    padding: 0.58rem 1.25rem;
+    font-size: 0.8rem;
     font-weight: 500;
-    border-radius: 25px;
+    letter-spacing: 0.03em;
+    border-radius: 9999px;
     cursor: pointer;
-    transition: var(--transition-fast);
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    user-select: none;
+    box-shadow: 0 1px 3px rgba(30, 25, 21, 0.04);
 }
 
 .filter-btn:hover {
     color: var(--color-siena);
     border-color: var(--color-siena);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(184, 92, 56, 0.12);
 }
 
 .filter-btn.active {
@@ -797,6 +807,26 @@ img {
     color: #ffffff;
     border-color: var(--color-siena);
     box-shadow: 0 4px 14px rgba(var(--color-siena-rgb), 0.28);
+}
+
+/* Insignia / Badge de Conteo Numérico dentro del Botón */
+.filter-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.12rem 0.48rem;
+    border-radius: 9999px;
+    background: rgba(157, 139, 127, 0.16);
+    color: inherit;
+    line-height: 1;
+    transition: background-color 0.2s ease;
+}
+
+.filter-btn.active .filter-count {
+    background: rgba(255, 255, 255, 0.24);
+    color: #ffffff;
 }
 
 .technique-filter-container {
@@ -808,27 +838,38 @@ img {
 .technique-label {
     font-size: 0.78rem;
     text-transform: uppercase;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     color: var(--color-stone-taupe);
     font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
 }
 
 .technique-select {
-    background: var(--color-bg-card);
+    background-color: var(--color-bg-card);
     border: 1px solid var(--color-frame-border);
     color: var(--color-text-primary);
-    padding: 0.55rem 1.2rem;
+    padding: 0.55rem 2.2rem 0.55rem 1.1rem;
     font-family: var(--font-sans);
     font-size: 0.82rem;
-    border-radius: 20px;
+    border-radius: 9999px;
     cursor: pointer;
     outline: none;
     transition: var(--transition-fast);
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239d8b7f' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.85rem center;
+    box-shadow: 0 1px 3px rgba(30, 25, 21, 0.04);
 }
 
 .technique-select:focus {
     border-color: var(--color-siena);
+    box-shadow: 0 0 0 3px rgba(var(--color-siena-rgb), 0.12);
 }
+
 
 .gallery-results-count {
     margin-top: 1.2rem;
@@ -2059,40 +2100,117 @@ img {
         margin-bottom: 2.2rem;
     }
 
+    /* ==========================================================================
+       FILTROS CURATORIALES EN MÓVIL: CARRUSEL HORIZONTAL TÁCTIL (ESTILO APP NATIVA)
+       Elimina el apiñamiento vertical y permite deslizar fluidamente con el pulgar
+       ========================================================================== */
+    .gallery-filter-wrapper,
     .filter-controls {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 1rem;
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        margin-bottom: 2rem;
+        padding-bottom: 1.1rem;
+        border-bottom: 1px solid var(--color-frame-border-subtle);
     }
 
+    /* Track horizontal táctil sin scrollbar con desborde suave a bordes de pantalla */
+    .gallery-filters,
     .filter-buttons {
         display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
         overflow-x: auto;
-        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
         -webkit-overflow-scrolling: touch;
-        padding: 0.4rem 0.2rem;
-        gap: 0.5rem;
-        scrollbar-width: none;
+        scroll-snap-type: x proximity;
+        scrollbar-width: none; /* Firefox */
+        gap: 0.55rem;
+        padding: 0.35rem 0.2rem 0.75rem 0.2rem;
+        margin: 0 0 0.85rem 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        -webkit-mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%);
+        mask-image: linear-gradient(to right, black calc(100% - 28px), transparent 100%);
     }
 
+    .gallery-filters::-webkit-scrollbar,
     .filter-buttons::-webkit-scrollbar {
-        display: none;
+        display: none; /* Chrome / Safari / Edge */
     }
 
     .filter-btn {
+        flex-shrink: 0;
         white-space: nowrap;
         scroll-snap-align: start;
-        flex-shrink: 0;
-        font-size: 0.74rem;
-        padding: 0.5rem 1rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.58rem 1.1rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.02em;
+        text-transform: none; /* Tipografía natural y legible en pantallas de móvil */
+        border-radius: 9999px;
+        -webkit-tap-highlight-color: transparent;
+        box-shadow: 0 1px 3px rgba(30, 25, 21, 0.05);
+        cursor: pointer;
     }
 
+    .filter-btn:active {
+        transform: scale(0.96);
+    }
+
+    .filter-btn .filter-count {
+        font-size: 0.72rem;
+        font-weight: 600;
+        padding: 0.1rem 0.42rem;
+        border-radius: 9999px;
+    }
+
+    /* Barra de Técnica en Móvil: Cápsula horizontal minimalista sin estorbar */
     .technique-filter-container {
+        display: flex;
+        align-items: center;
         justify-content: space-between;
-        background: var(--color-bg-card);
-        padding: 0.6rem 1rem;
-        border-radius: var(--border-radius);
+        gap: 0.5rem;
+        padding: 0.35rem 0.65rem 0.35rem 0.95rem;
+        background: rgba(223, 211, 199, 0.38);
+        border: 1px solid var(--color-frame-border-subtle);
+        border-radius: 9999px;
+        box-shadow: none;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .technique-label {
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--color-stone-taupe);
+        font-weight: 600;
+        flex-shrink: 0;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+    }
+
+    .technique-select {
+        background-color: var(--color-bg-card);
         border: 1px solid var(--color-frame-border);
+        color: var(--color-text-primary);
+        padding: 0.38rem 1.65rem 0.38rem 0.75rem;
+        font-size: 0.76rem;
+        font-weight: 500;
+        border-radius: 9999px;
+        max-width: 62%;
+        text-overflow: ellipsis;
+        box-shadow: 0 1px 2px rgba(30, 25, 21, 0.04);
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 24 24' fill='none' stroke='%239d8b7f' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.55rem center;
     }
 
     .gallery-grid {
@@ -2456,5 +2574,20 @@ img {
 
     .detail-item.span-2 {
         grid-column: span 1;
+    }
+
+    .filter-btn {
+        padding: 0.52rem 0.95rem;
+        font-size: 0.76rem;
+    }
+
+    .filter-btn .filter-count {
+        font-size: 0.68rem;
+        padding: 0.08rem 0.36rem;
+    }
+
+    .technique-select {
+        font-size: 0.74rem;
+        padding: 0.35rem 1.45rem 0.35rem 0.65rem;
     }
 }
