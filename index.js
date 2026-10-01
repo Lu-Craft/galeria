@@ -6,8 +6,7 @@
  * ==========================================================================
  */
 
-// Base de Datos Curatorial Completa (11 Obras Reales de Ángela María)
-// Base de Datos Curatorial Completa (12 Obras Reales de Ángela María organizadas por Series)
+// Base de Datos Curatorial Completa (13 Obras Reales de Ángela María organizadas por Series)
 const ARTWORKS_DATABASE = {
     // -------------------------------------------------------------
     // SERIE: SER-ES (Colección 1)
@@ -293,6 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initLightbox();
     initContactForm();
     initCardSpotlightTracking();
+    updateCollectionCounts();
 });
 
 /* ==========================================================================
@@ -506,6 +506,47 @@ function initGalleryFilters() {
 
             applyFilters();
         });
+    });
+}
+
+/**
+ * Sincronización Dinámica de Contadores de Obras y Colecciones
+ * Calcula automáticamente las obras por categoría desde ARTWORKS_DATABASE
+ * para asegurar que las tarjetas de colección y los filtros permanezcan
+ * 100% coherentes y actualizados en tiempo real si se agregan más obras.
+ */
+function updateCollectionCounts() {
+    const counts = {};
+    let totalArtworks = 0;
+
+    // Conteo desde la base de datos de obras
+    Object.values(ARTWORKS_DATABASE).forEach(artwork => {
+        if (artwork && artwork.categoryKey) {
+            counts[artwork.categoryKey] = (counts[artwork.categoryKey] || 0) + 1;
+            totalArtworks++;
+        }
+    });
+
+    // Actualizar insignias de conteo en las tarjetas de colecciones superiores
+    document.querySelectorAll(".collection-card[data-collection-key]").forEach(card => {
+        const key = card.getAttribute("data-collection-key");
+        const countBadge = card.querySelector(".collection-count-badge");
+        if (countBadge && counts[key] !== undefined) {
+            countBadge.textContent = `${counts[key]} Obra${counts[key] === 1 ? '' : 's'}`;
+        }
+    });
+
+    // Actualizar contadores numéricos en los botones de filtro de la galería
+    document.querySelectorAll(".filter-btn[data-filter]").forEach(btn => {
+        const filter = btn.getAttribute("data-filter");
+        const countSpan = btn.querySelector(".filter-count");
+        if (countSpan) {
+            if (filter === "all") {
+                countSpan.textContent = totalArtworks;
+            } else if (counts[filter] !== undefined) {
+                countSpan.textContent = counts[filter];
+            }
+        }
     });
 }
 
