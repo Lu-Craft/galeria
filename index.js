@@ -638,8 +638,12 @@ function initLightbox() {
         wrapper.style.maxHeight = `${maxH}px`;
 
         if (scaleText) {
-            const regNotice = artwork.registrationCode ? ` &bull; Cód: ${artwork.registrationCode}` : '';
-            scaleText.innerHTML = `<strong>${artwork.title}</strong> &bull; ${artwork.size}${regNotice} <span class="badge-ratio">(Escala 1:1 en Muro)</span>`;
+            if (isMobile) {
+                scaleText.innerHTML = `<strong>${artwork.title}</strong> &bull; ${artwork.size} <span class="badge-ratio">(1:1)</span>`;
+            } else {
+                const regNotice = artwork.registrationCode ? ` &bull; Cód: ${artwork.registrationCode}` : '';
+                scaleText.innerHTML = `<strong>${artwork.title}</strong> &bull; ${artwork.size}${regNotice} <span class="badge-ratio">(Escala 1:1 en Muro)</span>`;
+            }
         }
     };
 
