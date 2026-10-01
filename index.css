@@ -2435,10 +2435,114 @@ img {
     /* Catálogo & Filtros Estilo App con Scroll Horizontal */
     .gallery-section {
         padding: 4.5rem 1.25rem 4rem;
+        position: relative;
     }
 
     .gallery-curatorial-bar {
         margin-bottom: 2.2rem;
+    }
+
+    /* ==========================================================================
+       CAPAS AMBIENTALES DINÁMICAS EN MÓVIL: ESCALADO Y REPOSICIONAMIENTO CURATORIAL
+       Garantiza que los trazos de carboncillo, ramas y bocetos se mantengan
+       sutiles y en los márgenes, SIN obstruir títulos, subtítulos ni botones
+       ========================================================================== */
+    .gallery-section .section-header {
+        position: relative;
+        z-index: 5;
+    }
+
+    .gallery-filter-wrapper,
+    .filter-controls {
+        position: relative;
+        z-index: 5;
+    }
+
+    .gallery-ambient-layer {
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    /* Serie 1: Ser-Es (Carboncillos sutiles sin colisión con títulos) */
+    .charcoal-stroke.stroke-top-left {
+        width: 170px;
+        height: 85px;
+        top: -15px;
+        left: -30px;
+        opacity: 0.16;
+    }
+
+    .charcoal-stroke.stroke-bottom-right {
+        width: 180px;
+        height: 90px;
+        bottom: 0.5%;
+        right: -25px;
+        opacity: 0.16;
+    }
+
+    .charcoal-stick-prop {
+        width: 38px;
+        height: 8px;
+        top: 0.5%;
+        right: 4%;
+        opacity: 0.18;
+    }
+
+    /* Serie 2: Ciclo Femenino (Botánica flotante sutil) */
+    .botanical-branch-svg {
+        width: 150px;
+        height: 190px;
+        top: -10px;
+        right: -25px;
+        opacity: 0.2;
+    }
+
+    .botanical-petal {
+        transform: scale(0.75);
+        opacity: 0.35;
+    }
+
+    .botanical-petal.petal-1 {
+        top: 8%;
+        left: 2%;
+    }
+
+    .wild-berry {
+        transform: scale(0.75);
+        opacity: 0.28;
+    }
+
+    /* Serie 3: Fauna Marina (Ecosistema marino sutil) */
+    .ambient-caustics-light {
+        opacity: 0.5;
+    }
+
+    .sunbeam-streak {
+        width: 70px;
+        opacity: 0.3;
+    }
+
+    .marine-bubble {
+        transform: scale(0.75);
+        opacity: 0.3;
+    }
+
+    /* Serie 4: Retratos (Bocetos anatómicos de taller sutiles) */
+    .portrait-sketch.sketch-eye {
+        width: 120px;
+        height: 75px;
+        top: 0;
+        left: -20px;
+        opacity: 0.16;
+    }
+
+    .portrait-sketch.sketch-lips {
+        width: 115px;
+        height: 70px;
+        bottom: 1.5%;
+        right: -15px;
+        opacity: 0.16;
     }
 
     /* ==========================================================================
@@ -2579,10 +2683,15 @@ img {
 
     /* ==========================================================================
        LIGHTBOX MODAL EN MÓVIL: BOTTOM-SHEET DE LUJO DE GALERÍA (APP NATIVA)
+       Arquitectura Robusta Anti-Desbordamiento: 100vw exacto, sin scrolling horizontal
        ========================================================================== */
     .lightbox-modal {
         padding: 0;
         align-items: flex-end;
+        justify-content: center;
+        width: 100vw;
+        max-width: 100vw;
+        overflow-x: hidden;
     }
 
     .lightbox-content {
@@ -2592,42 +2701,65 @@ img {
         border-radius: 20px 20px 0 0;
         border: 1px solid var(--color-frame-border);
         border-bottom: none;
-        width: 100%;
-        max-width: 100%;
+        width: 100vw;
+        max-width: 100vw;
+        min-width: 0;
         transform: translateY(100%);
         transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
         display: flex;
         flex-direction: column;
-        overflow: hidden;
+        overflow-x: hidden;
+        overflow-y: hidden;
+        box-sizing: border-box;
     }
 
     .lightbox-modal.active .lightbox-content {
         transform: translateY(0);
     }
 
-    /* Barra Superior Fija (App Bar) - NUNCA SE SOLAPA CON EL LIENZO */
+    /* Barra Superior Fija (App Bar) - NUNCA SE DESBORDA NI DESPLAZA */
     .lightbox-header-bar {
-        height: 54px;
-        padding: 0 1rem;
+        height: 52px;
+        padding: 0 0.85rem;
         background: rgba(247, 243, 238, 0.98);
         border-bottom: 1px solid var(--color-frame-border);
         position: sticky;
         top: 0;
         z-index: 2050;
         flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        overflow: hidden;
     }
 
     .lightbox-header-meta {
+        display: flex;
+        align-items: center;
+        gap: 6px;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         min-width: 0;
+        flex: 1 1 auto;
     }
 
     .lightbox-counter {
         font-size: 0.78rem;
+        font-weight: 700;
         white-space: nowrap;
         flex-shrink: 0;
+        color: var(--color-text-primary);
+    }
+
+    .lightbox-header-dot {
+        font-size: 0.75rem;
+        flex-shrink: 0;
+        color: var(--color-siena);
     }
 
     .lightbox-header-category {
@@ -2635,17 +2767,33 @@ img {
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+
+    .lightbox-toolbar {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-shrink: 0;
     }
 
     .toolbar-btn {
-        padding: 0.38rem 0.68rem;
-        font-size: 0.66rem;
+        padding: 0.35rem 0.65rem;
+        font-size: 0.64rem;
         flex-shrink: 0;
+        white-space: nowrap;
+        gap: 4px;
+        border-radius: 16px;
     }
 
     .lightbox-close {
         width: 34px;
         height: 34px;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     /* Scroll Body Móvil (Scroll Suave Vertical de Todo el Contenido) */
@@ -2654,35 +2802,62 @@ img {
         flex-direction: column;
         grid-template-columns: none;
         overflow-y: auto;
+        overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
-        height: calc(95dvh - 54px);
+        height: calc(95dvh - 52px);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     /* Escenario del Lienzo Móvil */
     .lightbox-stage-container {
         border-right: none;
         border-bottom: 1px solid var(--color-frame-border);
-        min-height: 240px;
+        min-height: 250px;
         max-height: 42vh;
         padding: 1rem 0.5rem;
         flex-shrink: 0;
         position: relative;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .lightbox-image-stage {
-        padding: 0.5rem;
-        height: auto;
+        padding: 0.5rem 2.6rem;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        height: 100%;
         min-height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .framed-canvas-wrapper {
         padding: 6px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .framed-canvas-wrapper img {
-        max-height: 36vh;
-        max-width: 86vw;
+        max-height: 35vh;
+        max-width: 100%;
+        width: auto;
+        height: auto;
         object-fit: contain;
+        display: block;
+        margin: 0 auto;
     }
 
     /* Escenario Modo Sala en Móvil con Textura Arquitectónica Realista */
@@ -2696,6 +2871,7 @@ img {
         border-radius: 4px;
         position: relative;
         overflow: hidden;
+        padding: 0;
     }
 
     .lightbox-image-stage.wall-mode .framed-canvas-wrapper {
@@ -2733,17 +2909,17 @@ img {
     }
 
     .lightbox-nav-btn {
-        width: 38px;
-        height: 38px;
+        width: 36px;
+        height: 36px;
         z-index: 2045;
     }
 
     .lightbox-prev {
-        left: 0.5rem;
+        left: 0.45rem;
     }
 
     .lightbox-next {
-        right: 0.5rem;
+        right: 0.45rem;
     }
 
     /* Ficha Técnica Móvil (Completamente visible, sin cortes) */
@@ -2752,21 +2928,29 @@ img {
         border-top: none;
         display: flex;
         flex-direction: column;
-        overflow: visible;
+        overflow-x: hidden;
+        overflow-y: visible;
         flex-shrink: 0;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .lightbox-title-wrap {
         margin-bottom: 1.2rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .lightbox-title {
         font-size: 1.95rem;
         line-height: 1.15;
+        word-break: break-word;
     }
 
     .lightbox-subtitle {
         font-size: 1.05rem;
+        word-break: break-word;
     }
 
     .lightbox-details-grid {
@@ -2774,6 +2958,8 @@ img {
         gap: 0.75rem;
         padding: 1rem;
         margin-bottom: 1.5rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .detail-item.span-2 {
@@ -2783,17 +2969,45 @@ img {
     .curatorial-note {
         margin-bottom: 1.8rem;
         padding: 1rem 1.15rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .lightbox-description {
         font-size: 0.9rem;
         line-height: 1.65;
+        word-break: break-word;
+    }
+
+    .certificate-action-row {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-top: -0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .cert-link-btn,
+    .cert-download-btn {
+        width: 100%;
+        box-sizing: border-box;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .modal-actions {
+        width: 100%;
+        box-sizing: border-box;
     }
 
     .btn-inquire-app {
         min-height: 50px;
         font-size: 0.82rem;
         padding: 0.9rem 1.2rem;
+        width: 100%;
+        box-sizing: border-box;
     }
 
     /* Sección Artista en Móvil */
@@ -2930,5 +3144,48 @@ img {
     .technique-select {
         font-size: 0.74rem;
         padding: 0.35rem 1.45rem 0.35rem 0.65rem;
+    }
+}
+
+/* Pantallas Extra Estrechas (ej. Android 360px) */
+@media (max-width: 380px) {
+    .lightbox-header-bar {
+        padding: 0 0.5rem;
+        gap: 4px;
+    }
+
+    .lightbox-toolbar {
+        gap: 4px;
+    }
+
+    .toolbar-btn {
+        padding: 0.3rem 0.5rem;
+        font-size: 0.6rem;
+    }
+
+    .lightbox-close {
+        width: 30px;
+        height: 30px;
+    }
+
+    .lightbox-image-stage {
+        padding: 0.5rem 2.2rem;
+    }
+
+    .lightbox-nav-btn {
+        width: 32px;
+        height: 32px;
+    }
+
+    .lightbox-prev {
+        left: 0.3rem;
+    }
+
+    .lightbox-next {
+        right: 0.3rem;
+    }
+
+    .lightbox-title {
+        font-size: 1.55rem;
     }
 }

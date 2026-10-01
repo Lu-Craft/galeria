@@ -643,7 +643,10 @@ function initLightbox() {
         isWallMode = false;
         if (lightboxStage) lightboxStage.classList.remove("wall-mode");
         if (btnToggleWall) btnToggleWall.classList.remove("active");
-        if (wallBtnText) wallBtnText.textContent = "Ver en Sala / Espacio";
+        if (wallBtnText) {
+            const isMobile = window.innerWidth <= 768;
+            wallBtnText.textContent = isMobile ? "En Sala" : "Ver en Sala / Espacio";
+        }
         const wrapper = document.getElementById("canvas-wrapper");
         if (wrapper) {
             wrapper.style.width = "";
@@ -661,7 +664,12 @@ function initLightbox() {
             lightboxStage.classList.toggle("wall-mode", isWallMode);
             btnToggleWall.classList.toggle("active", isWallMode);
             if (wallBtnText) {
-                wallBtnText.textContent = isWallMode ? "Ver en Primer Plano" : "Ver en Sala / Espacio";
+                const isMobile = window.innerWidth <= 768;
+                if (isWallMode) {
+                    wallBtnText.textContent = isMobile ? "Primer Plano" : "Ver en Primer Plano";
+                } else {
+                    wallBtnText.textContent = isMobile ? "En Sala" : "Ver en Sala / Espacio";
+                }
             }
             updateWallScale(artworkKeys[currentArtworkIndex]);
         });
