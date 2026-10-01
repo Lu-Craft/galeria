@@ -1834,6 +1834,59 @@ img {
     border: 1px solid rgba(181, 141, 68, 0.3);
 }
 
+.registration-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--color-siena);
+    letter-spacing: 0.08em;
+}
+
+.registration-badge strong {
+    color: var(--color-siena);
+    font-weight: 800;
+}
+
+/* Fila de Acción del Certificado de Autenticidad */
+.certificate-action-row {
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+.cert-link-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-siena);
+    text-decoration: none;
+    border: 1px solid rgba(184, 92, 56, 0.35);
+    background: rgba(184, 92, 56, 0.06);
+    padding: 0.55rem 1.1rem;
+    border-radius: 6px;
+    transition: var(--transition-fast);
+}
+
+.cert-link-btn:hover {
+    background: var(--color-siena);
+    color: #ffffff;
+    border-color: var(--color-siena);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(184, 92, 56, 0.25);
+}
+
+.cert-link-btn svg {
+    flex-shrink: 0;
+}
+
 /* Nota Curatorial */
 .curatorial-note {
     background-color: var(--color-bg-card);

@@ -20,9 +20,12 @@ const ARTWORKS_DATABASE = {
         categoryKey: "ser-es",
         techniqueKey: "mixta",
         medium: "Técnica Mixta, Óleo & Carboncillo",
-        size: "85 x 65 cm",
+        size: "80 × 56 cm",
+        widthCm: 56,
+        heightCm: 80,
         support: "Papel Kraft Especial sobre Bastidor",
         year: "2026",
+        registrationCode: null,
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Sirena.jpg",
@@ -36,9 +39,12 @@ const ARTWORKS_DATABASE = {
         categoryKey: "ser-es",
         techniqueKey: "mixta",
         medium: "Técnica Mixta, Grafito & Óleo",
-        size: "80 x 60 cm",
+        size: "80 × 56 cm",
+        widthCm: 56,
+        heightCm: 80,
         support: "Papel Tono Kraft Tratado",
         year: "2026",
+        registrationCode: null,
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Sátiro.jpg",
@@ -52,9 +58,12 @@ const ARTWORKS_DATABASE = {
         categoryKey: "ser-es",
         techniqueKey: "mixta",
         medium: "Técnica Mixta, Óleo & Pastel",
-        size: "90 x 70 cm",
+        size: "80 × 56 cm",
+        widthCm: 56,
+        heightCm: 80,
         support: "Lienzo Texturizado",
         year: "2026",
+        registrationCode: null,
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Lechuza.jpg",
@@ -72,13 +81,16 @@ const ARTWORKS_DATABASE = {
         categoryKey: "ciclo-femenino",
         techniqueKey: "oleo",
         medium: "Óleo sobre Lienzo",
-        size: "75 x 90 cm",
+        size: "60 × 90 cm",
+        widthCm: 90,
+        heightCm: 60,
         support: "Bastidor de Algodón Profesional",
-        year: "2025",
+        year: "2026",
+        registrationCode: "WE004",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Fluvia.jpg",
-        description: "Primera obra de la 'Serie: Ciclo Femenino'. La ingravidez acuática y el despertar biológico se funden en la sensualidad botánica. Las aletas vaporosas de un pez betta bermellón flotan entre pétalos de rosas y un fondo azul de matices aterciopelados, representando la menarquía como rito sagrado del ciclo vital."
+        description: "Primera obra de la 'Serie: Ciclo Femenino' (Registro Oficial WE004, 60 × 90 cm). La ingravidez acuática y el despertar biológico se funden en la sensualidad botánica. Las aletas vaporosas de un pez betta bermellón flotan entre pétalos de rosas y un fondo azul de matices aterciopelados, representando la menarquía como rito sagrado del ciclo vital."
     },
     "renovacion": {
         id: "renovacion",
@@ -87,14 +99,17 @@ const ARTWORKS_DATABASE = {
         category: "Serie: Ciclo Femenino",
         categoryKey: "ciclo-femenino",
         techniqueKey: "oleo",
-        medium: "Óleo & Pátina sobre Lienzo",
-        size: "70 x 70 cm",
+        medium: "Óleo sobre Lienzo",
+        size: "90 × 60 cm",
+        widthCm: 60,
+        heightCm: 90,
         support: "Lienzo de Algodón Tensorizado",
-        year: "2025",
+        year: "2026",
+        registrationCode: "WE005",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Renovación.jpg",
-        description: "Segunda obra de la 'Serie: Ciclo Femenino'. Símbolo milenario de renacimiento, intuición y vitalidad ascendente. La liebre es capturada en un momento de quietud expectante entre la hojarasca, encarnando la energía renovadora y fecunda de la fase folicular."
+        description: "Segunda obra de la 'Serie: Ciclo Femenino' (Registro Oficial WE005, 90 × 60 cm). Símbolo milenario de renacimiento, intuición y vitalidad ascendente. La liebre es capturada en un momento de quietud expectante entre la hojarasca, encarnando la energía renovadora y fecunda de la fase folicular."
     },
     "plenitud": {
         id: "plenitud",
@@ -104,13 +119,16 @@ const ARTWORKS_DATABASE = {
         categoryKey: "ciclo-femenino",
         techniqueKey: "oleo",
         medium: "Óleo sobre Lienzo",
-        size: "80 x 80 cm",
+        size: "90 × 60 cm",
+        widthCm: 60,
+        heightCm: 90,
         support: "Lienzo Tensorizado Profesional",
         year: "2026",
+        registrationCode: "WE006",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Plenitud.jpg",
-        description: "Tercera obra y cumbre de la 'Serie: Ciclo Femenino'. Representa el momento de máxima expansión, luminosidad y plenitud creativa y biológica de la mujer: la ovulación como instante sagrado de creación y poder vital."
+        description: "Tercera obra y cumbre de la 'Serie: Ciclo Femenino' (Registro Oficial WE006, 90 × 60 cm). Representa el momento de máxima expansión, luminosidad y plenitud creativa y biológica de la mujer: la ovulación como instante sagrado de creación y poder vital."
     },
 
     // -------------------------------------------------------------
@@ -123,14 +141,17 @@ const ARTWORKS_DATABASE = {
         category: "Fauna & Vida Marina",
         categoryKey: "fauna-marina",
         techniqueKey: "oleo",
-        medium: "Óleo con Espátula (Impasto Pesado)",
-        size: "100 x 80 cm",
-        support: "Lienzo de Lino Tensorizado",
+        medium: "Óleo sobre Lienzo",
+        size: "20 × 20 cm",
+        widthCm: 20,
+        heightCm: 20,
+        support: "Lienzo sobre Bastidor Tensorizado",
         year: "2026",
+        registrationCode: "WE002",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/LEON.jpg",
-        description: "Un derroche de materia y empaste escultórico al óleo con espátula. Cada enérgico trazo carga la melena con destellos de ocre, siena tostada y dorados volcánicos, construyendo una mirada frontal de soberbia serenidad. La textura tangible genera un juego de sombras vivas con la iluminación del espacio."
+        description: "Obra de formato íntimo al óleo sobre lienzo (Registro Oficial WE002, 20 × 20 cm). Una pintura de empaste expresivo y concentrado, donde cada enérgico trazo carga la melena con destellos de ocre, siena tostada y dorados volcánicos, esculpiendo una mirada frontal de serena majestuosidad."
     },
     "pez-leon": {
         id: "pez-leon",
@@ -139,14 +160,17 @@ const ARTWORKS_DATABASE = {
         category: "Fauna & Vida Marina",
         categoryKey: "fauna-marina",
         techniqueKey: "oleo",
-        medium: "Óleo Texturizado con Pincel y Espátula",
-        size: "80 x 100 cm",
+        medium: "Óleo sobre Lienzo",
+        size: "70 × 30 cm",
+        widthCm: 30,
+        heightCm: 70,
         support: "Lienzo sobre Bastidor Doble",
-        year: "2026",
+        year: "2025",
+        registrationCode: "WE001",
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/PEZ LEON.jpg",
-        description: "La geometría de las aguas cristalinas se disuelve en pinceladas en mosaico de azules cobalto y turquesas caribeños. El pez león despliega sus espinas radiantes en un baile majestuoso y armónico, celebrando la exuberancia indómita del fondo marino."
+        description: "Lienzo vertical estilizado al óleo sobre lienzo (Registro Oficial WE001, 70 × 30 cm). La geometría y los reflejos oceánicos se disuelven en pinceladas facetadas de azules cobalto y turquesas. El pez león despliega sus espinas radiantes en un baile majestuoso y armónico, celebrando la exuberancia indómita del fondo marino."
     },
     "duplo": {
         id: "duplo",
@@ -155,14 +179,17 @@ const ARTWORKS_DATABASE = {
         category: "Fauna & Vida Marina",
         categoryKey: "fauna-marina",
         techniqueKey: "oleo",
-        medium: "Óleo Estilo Mosaico sobre Lienzo",
-        size: "70 x 95 cm",
+        medium: "Óleo sobre Lienzo",
+        size: "100 × 50 cm",
+        widthCm: 50,
+        heightCm: 100,
         support: "Lienzo Tensorizado de Galería",
-        year: "2025",
+        year: "2023",
+        registrationCode: "WE003",
         status: "Colección Privada",
         isAvailable: false,
         image: "multimedia/DUPLO.jpg",
-        description: "Una danza sincronizada de dos peces tropicales que surcan aguas iluminadas por el sol. La técnica de micro-pinceladas facetadas crea un efecto de vitral o mosaico impresionista, donde el agua parece titilar con vida propia ante los ojos del espectador."
+        description: "Imponente composición vertical de gran formato al óleo sobre lienzo (Registro Oficial WE003, 100 × 50 cm). Una danza sincronizada de dos peces tropicales surcando aguas iluminadas por el sol caribeño. La técnica de pinceladas facetadas crea un vibrante efecto de vitral o mosaico impresionista."
     },
 
     // -------------------------------------------------------------
@@ -175,30 +202,36 @@ const ARTWORKS_DATABASE = {
         category: "Retratos",
         categoryKey: "retratos",
         techniqueKey: "oleo",
-        medium: "Óleo Tradicional sobre Lienzo",
-        size: "60 x 50 cm",
+        medium: "Óleo sobre Lienzo",
+        size: "25 × 25 cm",
+        widthCm: 25,
+        heightCm: 25,
         support: "Lienzo de Algodón Fino",
-        year: "2025",
+        year: "2026",
+        registrationCode: "WE009",
         status: "Colección Privada",
         isAvailable: false,
         image: "multimedia/Levi Carlo.jpg",
-        description: "Retrato infantil cargado de ternura y frescura cromática. Con una pincelada directa, suelta y luminosa, Ángela María inmortaliza la chispa de asombro en la mirada del niño, enmarcada por un fondo dinámico que celebra la espontaneidad y la alegría de los primeros años."
+        description: "Retrato de formato cuadrado al óleo sobre lienzo (Registro Oficial WE009, 25 × 25 cm). Cargado de ternura y frescura cromática, la pincelada directa y luminosa inmortaliza la chispa de asombro e inocencia en la mirada infantil."
     },
     "luan": {
         id: "luan",
         title: "Luan",
-        subtitle: "Retrato al Óleo y Acrílico",
+        subtitle: "Retrato al Óleo",
         category: "Retratos",
         categoryKey: "retratos",
-        techniqueKey: "acrilico",
-        medium: "Óleo & Acrílico sobre Lienzo",
-        size: "65 x 50 cm",
+        techniqueKey: "oleo",
+        medium: "Óleo sobre Lienzo",
+        size: "25 × 25 cm",
+        widthCm: 25,
+        heightCm: 25,
         support: "Lienzo sobre Bastidor de Madera",
         year: "2026",
+        registrationCode: "WE008",
         status: "Colección Privada",
         isAvailable: false,
         image: "multimedia/Luan.jpg",
-        description: "Una mirada serena y contemplativa envuelta en un aura luminosa de tonos menta y aguamarina. El modelado sutil del rostro captura la juventud, los anhelos y el silencio interior, logrando una presencia viva que trasciende los límites del bastidor."
+        description: "Retrato al óleo sobre lienzo (Registro Oficial WE008, 25 × 25 cm). Una mirada serena y contemplativa envuelta en un aura luminosa de tonos menta y aguamarina. El modelado sutil del rostro captura la juventud, los anhelos y el silencio interior."
     },
     "william": {
         id: "william",
@@ -208,13 +241,16 @@ const ARTWORKS_DATABASE = {
         categoryKey: "retratos",
         techniqueKey: "oleo",
         medium: "Óleo sobre Lienzo",
-        size: "70 x 55 cm",
+        size: "90 × 60 cm",
+        widthCm: 60,
+        heightCm: 90,
         support: "Lienzo de Grano Medio",
         year: "2025",
+        registrationCode: "WE010",
         status: "Colección Privada",
         isAvailable: false,
         image: "multimedia/William.jpg",
-        description: "Un retrato de atmósfera íntima que conjuga la figura humana con el entorno costero. El sombrero de paja, la camisa blanca y el rumor visual de las olas capturan la calma de una tarde tropical junto al mar, donde la luz acaricia los volúmenes con maestría y serenidad."
+        description: "Retrato vertical de gran formato al óleo sobre lienzo (Registro Oficial WE010, 90 × 60 cm). Una atmósfera íntima que conjuga la figura humana con el entorno costero. El sombrero de paja, la camisa blanca y el rumor visual de las olas capturan la calma de una tarde tropical junto al mar."
     }
 };
 
@@ -461,10 +497,16 @@ function initLightbox() {
 
     if (!galleryGrid || !modal) return;
 
-    // Analizador de dimensiones reales de la obra ("80 x 60 cm")
-    const parseArtworkDimensions = (sizeStr) => {
-        if (!sizeStr) return { heightCm: 80, widthCm: 60 };
-        const matches = sizeStr.match(/(\d+)\s*x\s*(\d+)/i);
+    // Analizador y extractor de dimensiones reales de la obra
+    const getArtworkDimensions = (artwork) => {
+        if (!artwork) return { heightCm: 80, widthCm: 60 };
+        if (artwork.heightCm && artwork.widthCm) {
+            return {
+                heightCm: artwork.heightCm,
+                widthCm: artwork.widthCm
+            };
+        }
+        const matches = artwork.size ? artwork.size.match(/(\d+)\s*x\s*(\d+)/i) : null;
         if (matches) {
             return {
                 heightCm: parseInt(matches[1], 10),
@@ -474,7 +516,7 @@ function initLightbox() {
         return { heightCm: 80, widthCm: 60 };
     };
 
-    // Actualizar escala arquitectónica de la obra en el muro de galería
+    // Actualizar escala arquitectónica de la obra en el muro de galería (Simulación Fiel)
     const updateWallScale = (artworkId) => {
         const artwork = ARTWORKS_DATABASE[artworkId];
         const wrapper = document.getElementById("canvas-wrapper");
@@ -487,27 +529,37 @@ function initLightbox() {
             wrapper.style.height = "";
             wrapper.style.maxWidth = "";
             wrapper.style.maxHeight = "";
+            wrapper.style.borderWidth = "";
             return;
         }
 
-        const dims = parseArtworkDimensions(artwork.size);
+        const dims = getArtworkDimensions(artwork);
         const stageH = stage && stage.clientHeight > 0 ? stage.clientHeight : (window.innerHeight * 0.7);
         const stageW = stage && stage.clientWidth > 0 ? stage.clientWidth : (window.innerWidth * 0.5);
         const isMobile = window.innerWidth <= 768;
 
         // Proporción arquitectónica curatorial (Museo Eye-Level Hanging Rule):
-        // En una pared de exposición de ~2.8m, una obra de referencia de 80 cm ocupa aproximadamente
-        // el 43% de la altura del escenario en desktop y ~48% en móvil, permitiendo apreciar 
+        // En una pared de exposición de ~2.8m, una obra de referencia de 90 cm ocupa aproximadamente
+        // el 46% de la altura del escenario en desktop y ~50% en móvil, permitiendo apreciar 
         // con nitidez los detalles del cuadro sin chocar con el rodapié ni con los rieles del techo.
-        const targetPercent = isMobile ? 0.48 : 0.43;
-        const scale = (targetPercent * stageH) / 80;
+        const refHeightCm = 90;
+        const targetPercent = isMobile ? 0.50 : 0.46;
+        const scale = (targetPercent * stageH) / refHeightCm;
 
         let targetHeight = Math.round(dims.heightCm * scale);
         let targetWidth = Math.round(dims.widthCm * scale);
 
+        // Para obras de formato pequeño (20x20 o 25x25), asegurar visibilidad y presencia estética
+        const minDimension = isMobile ? 65 : 75;
+        if (targetHeight < minDimension && targetWidth < minDimension) {
+            const minScale = minDimension / Math.min(dims.heightCm, dims.widthCm);
+            targetHeight = Math.round(dims.heightCm * minScale);
+            targetWidth = Math.round(dims.widthCm * minScale);
+        }
+
         // Limitar dimensiones para evitar desbordes o colisiones con flechas de navegación y rodapié:
-        const maxH = Math.round(stageH * (isMobile ? 0.52 : 0.50));
-        const maxW = Math.round(stageW * (isMobile ? 0.72 : 0.68));
+        const maxH = Math.round(stageH * (isMobile ? 0.55 : 0.52));
+        const maxW = Math.round(stageW * (isMobile ? 0.76 : 0.72));
 
         if (targetHeight > maxH) {
             const r = maxH / targetHeight;
@@ -520,13 +572,24 @@ function initLightbox() {
             targetHeight = Math.round(targetHeight * r);
         }
 
+        // Calibración visual del marco según el tamaño real de la pieza:
+        const maxDimCm = Math.max(dims.heightCm, dims.widthCm);
+        if (maxDimCm <= 25) {
+            wrapper.style.borderWidth = isMobile ? "3px" : "4px";
+        } else if (maxDimCm <= 50) {
+            wrapper.style.borderWidth = isMobile ? "5px" : "6px";
+        } else {
+            wrapper.style.borderWidth = isMobile ? "6px" : "8px";
+        }
+
         wrapper.style.width = `${targetWidth}px`;
         wrapper.style.height = `${targetHeight}px`;
         wrapper.style.maxWidth = `${maxW}px`;
         wrapper.style.maxHeight = `${maxH}px`;
 
         if (scaleText) {
-            scaleText.innerHTML = `<strong>${artwork.title}</strong> &bull; ${dims.heightCm} × ${dims.widthCm} cm <span class="badge-ratio">(Escala 1:1 en Muro)</span>`;
+            const regNotice = artwork.registrationCode ? ` &bull; Cód: ${artwork.registrationCode}` : '';
+            scaleText.innerHTML = `<strong>${artwork.title}</strong> &bull; ${artwork.size}${regNotice} <span class="badge-ratio">(Escala 1:1 en Muro)</span>`;
         }
     };
 
@@ -542,6 +605,7 @@ function initLightbox() {
             wrapper.style.height = "";
             wrapper.style.maxWidth = "";
             wrapper.style.maxHeight = "";
+            wrapper.style.borderWidth = "";
         }
     };
 
@@ -583,6 +647,22 @@ function initLightbox() {
         if (modalMedium) modalMedium.textContent = artwork.medium;
         if (modalSupport) modalSupport.textContent = artwork.support;
         if (modalYear) modalYear.textContent = artwork.year;
+
+        // Código de Registro Oficial y Certificado de Autenticidad
+        const regCodeItem = document.getElementById("modal-art-reg-item");
+        const regCodeEl = document.getElementById("modal-art-regcode");
+        const certRowEl = document.getElementById("modal-cert-row");
+        if (regCodeItem && regCodeEl) {
+            if (artwork.registrationCode) {
+                regCodeItem.style.display = "flex";
+                regCodeEl.innerHTML = `<strong>${artwork.registrationCode}</strong> &bull; Certificado Oficial`;
+            } else {
+                regCodeItem.style.display = "none";
+            }
+        }
+        if (certRowEl) {
+            certRowEl.style.display = artwork.registrationCode ? "flex" : "none";
+        }
 
         // Actualizar contador de obra y categoría de barra superior
         const counterEl = document.getElementById("modal-art-counter");
