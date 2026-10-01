@@ -200,7 +200,16 @@
         </section>
 
         <!-- Galería / Catálogo de Obras Curadas -->
-        <section class="gallery-section" id="galeria">
+        <section class="gallery-section" id="galeria" data-active-theme="all">
+            <!-- Capas de Fondo Temático Dinámico por Serie Artística -->
+            <div class="gallery-thematic-backdrop" id="gallery-thematic-backdrop" aria-hidden="true">
+                <div class="thematic-layer thematic-layer-ser-es" data-theme-layer="ser-es"></div>
+                <div class="thematic-layer thematic-layer-ciclo-femenino" data-theme-layer="ciclo-femenino"></div>
+                <div class="thematic-layer thematic-layer-fauna-marina" data-theme-layer="fauna-marina"></div>
+                <div class="thematic-layer thematic-layer-retratos" data-theme-layer="retratos"></div>
+                <div class="thematic-ambient-overlay"></div>
+            </div>
+
             <div class="section-container">
                 
                 <div class="section-header">
@@ -244,6 +253,11 @@
                             <option value="mixta">Técnica Mixta / Kraft</option>
                         </select>
                     </div>
+                </div>
+
+                <!-- Indicador Curatorial de Atmósfera de la Serie Activa -->
+                <div class="gallery-theme-badge-container">
+                    <div class="gallery-theme-badge" id="gallery-theme-badge" aria-live="polite"></div>
                 </div>
 
                 <!-- Grid de Galería Fluido (12 Obras Reales) -->

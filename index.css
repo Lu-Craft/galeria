@@ -697,8 +697,180 @@ img {
    CATÁLOGO / GALERÍA RAZONADA (FILTROS MULTICRITERIO)
    ========================================================================== */
 .gallery-section {
+    position: relative;
     padding: 7rem 2.2rem 6rem;
     background-color: var(--color-bg-primary);
+    overflow: hidden;
+    transition: background-color 0.8s ease;
+}
+
+.gallery-section .section-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* ==========================================================================
+   FONDOS TEMÁTICOS PERSONALIZADOS POR SERIE ARTÍSTICA (GALERÍA VIVA)
+   ========================================================================== */
+.gallery-thematic-backdrop {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.thematic-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1.04);
+    transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+}
+
+/* 1. Serie: Ser-Es (Carboncillo & Tiza) */
+.thematic-layer-ser-es {
+    background-image: url('assets/theme_ser_es.jpg');
+    background-position: center 30%;
+}
+
+/* 2. Serie: Ciclo Femenino (Ecosistema Botánico, Rosas, Frutos & Agua Profunda) */
+.thematic-layer-ciclo-femenino {
+    background-image: url('assets/theme_ciclo_femenino.jpg');
+    background-position: center 35%;
+}
+
+/* 3. Fauna & Vida Marina (Océano Profundo, Caústicas & Luz Solar) */
+.thematic-layer-fauna-marina {
+    background-image: url('assets/theme_fauna_marina.jpg');
+    background-position: center center;
+}
+
+/* 4. Retratos (Bocetos Anatómicos de Taller, Miradas & Proporciones) */
+.thematic-layer-retratos {
+    background-image: url('assets/theme_retratos.jpg');
+    background-position: center 25%;
+}
+
+/* Activación por selección de filtro de colección */
+.gallery-section[data-active-theme="ser-es"] .thematic-layer-ser-es,
+.gallery-section[data-active-theme="ciclo-femenino"] .thematic-layer-ciclo-femenino,
+.gallery-section[data-active-theme="fauna-marina"] .thematic-layer-fauna-marina,
+.gallery-section[data-active-theme="retratos"] .thematic-layer-retratos {
+    opacity: 0.88;
+    transform: scale(1);
+}
+
+/* Velo ambiental armonizador de luz y contraste */
+.thematic-ambient-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.8s ease, background 0.8s ease;
+}
+
+.gallery-section:not([data-active-theme="all"]) .thematic-ambient-overlay {
+    opacity: 1;
+}
+
+.gallery-section[data-active-theme="ser-es"] .thematic-ambient-overlay {
+    background: radial-gradient(circle at 50% 30%, rgba(246, 241, 233, 0.28) 0%, rgba(238, 230, 219, 0.58) 60%, rgba(222, 210, 195, 0.85) 100%);
+}
+
+.gallery-section[data-active-theme="ciclo-femenino"] .thematic-ambient-overlay {
+    background: radial-gradient(circle at 50% 30%, rgba(248, 244, 239, 0.22) 0%, rgba(240, 232, 224, 0.55) 60%, rgba(226, 215, 204, 0.82) 100%);
+}
+
+.gallery-section[data-active-theme="fauna-marina"] .thematic-ambient-overlay {
+    background: radial-gradient(circle at 50% 30%, rgba(246, 246, 244, 0.22) 0%, rgba(232, 242, 246, 0.52) 60%, rgba(212, 229, 236, 0.82) 100%);
+}
+
+.gallery-section[data-active-theme="retratos"] .thematic-ambient-overlay {
+    background: radial-gradient(circle at 50% 30%, rgba(247, 244, 239, 0.26) 0%, rgba(241, 234, 226, 0.58) 60%, rgba(228, 218, 206, 0.85) 100%);
+}
+
+/* Sutil realce de legibilidad del encabezado y filtros cuando un tema está activo */
+.gallery-section:not([data-active-theme="all"]) .section-header {
+    background: rgba(253, 251, 247, 0.88);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 2.2rem 2.5rem;
+    border-radius: 20px;
+    border: 1px solid rgba(196, 181, 166, 0.45);
+    box-shadow: 0 12px 35px rgba(45, 36, 30, 0.06);
+    margin-bottom: 2.5rem;
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-section:not([data-active-theme="all"]) .gallery-filter-wrapper {
+    background: rgba(253, 251, 247, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1rem 1.6rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(196, 181, 166, 0.45);
+    box-shadow: 0 8px 24px rgba(45, 36, 30, 0.05);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Badge Curatorial de Atmósfera de la Serie */
+.gallery-theme-badge-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+    min-height: 44px;
+}
+
+.gallery-theme-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.6rem 1.45rem;
+    background: rgba(253, 251, 247, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(184, 92, 56, 0.35);
+    border-radius: 9999px;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-text-primary);
+    box-shadow: 0 6px 20px rgba(184, 92, 56, 0.12);
+    opacity: 0;
+    transform: translateY(-8px) scale(0.96);
+    pointer-events: none;
+    transition: opacity 0.45s ease, transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gallery-theme-badge.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
+
+.gallery-theme-badge .badge-icon {
+    font-size: 1.15rem;
+    display: inline-flex;
+    align-items: center;
+}
+
+.gallery-theme-badge .badge-text {
+    line-height: 1.4;
+}
+
+.gallery-theme-badge .badge-text strong {
+    color: var(--color-siena);
+    font-weight: 600;
 }
 
 /* Barra de Filtros y Búsqueda */
@@ -2147,6 +2319,25 @@ img {
     /* Catálogo & Filtros Estilo App con Scroll Horizontal */
     .gallery-section {
         padding: 4.5rem 1.25rem 4rem;
+    }
+
+    .gallery-section:not([data-active-theme="all"]) .section-header {
+        padding: 1.5rem 1.25rem;
+        border-radius: 16px;
+    }
+
+    .gallery-section:not([data-active-theme="all"]) .gallery-filter-wrapper {
+        border-radius: 18px;
+        padding: 0.85rem 0.85rem;
+    }
+
+    .gallery-theme-badge {
+        font-size: 0.78rem;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        border-radius: 14px;
+        flex-direction: column;
+        gap: 0.35rem;
     }
 
     .gallery-curatorial-bar {
