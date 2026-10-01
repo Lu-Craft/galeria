@@ -542,6 +542,11 @@ function initLightbox() {
 
     if (!galleryGrid || !modal) return;
 
+    if (wallBtnText) {
+        const isMobile = window.innerWidth <= 768;
+        wallBtnText.textContent = isMobile ? "En Sala" : "Ver en Sala / Espacio";
+    }
+
     // Analizador y extractor de dimensiones reales de la obra
     const getArtworkDimensions = (artwork) => {
         if (!artwork) return { heightCm: 80, widthCm: 60 };
