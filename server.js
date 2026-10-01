@@ -21,7 +21,8 @@ const MIME_TYPES = {
     '.woff2': 'font/woff2',
     '.woff': 'font/woff',
     '.ttf': 'font/ttf',
-    '.mp4': 'video/mp4'
+    '.mp4': 'video/mp4',
+    '.pdf': 'application/pdf'
 };
 
 const server = http.createServer((req, res) => {
@@ -51,11 +52,16 @@ const server = http.createServer((req, res) => {
         const ext = path.extname(safePath).toLowerCase();
         const contentType = MIME_TYPES[ext] || 'application/octet-stream';
 
-        res.writeHead(200, {
+        const headers = {
             'Content-Type': contentType,
             'Content-Length': stats.size,
             'Cache-Control': 'no-cache, no-store, must-revalidate'
-        });
+        };
+        if (ext === '.pdf') {
+            headers['Content-Disposition'] = 'inline';
+        }
+
+        res.writeHead(200, headers);
 
         const stream = fs.createReadStream(safePath);
         stream.pipe(res);

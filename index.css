@@ -2111,6 +2111,9 @@ img {
     margin-top: -1rem;
     margin-bottom: 2rem;
     display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
 .cert-link-btn {
@@ -2118,15 +2121,15 @@ img {
     align-items: center;
     gap: 8px;
     font-family: var(--font-sans);
-    font-size: 0.76rem;
+    font-size: 0.78rem;
     font-weight: 600;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--color-siena);
     text-decoration: none;
-    border: 1px solid rgba(184, 92, 56, 0.35);
-    background: rgba(184, 92, 56, 0.06);
-    padding: 0.55rem 1.1rem;
+    border: 1px solid rgba(184, 92, 56, 0.4);
+    background: rgba(184, 92, 56, 0.08);
+    padding: 0.58rem 1.15rem;
     border-radius: 6px;
     transition: var(--transition-fast);
 }
@@ -2140,6 +2143,35 @@ img {
 }
 
 .cert-link-btn svg {
+    flex-shrink: 0;
+}
+
+.cert-download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--font-sans);
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-stone-taupe);
+    text-decoration: none;
+    border: 1px solid var(--color-frame-border);
+    background: var(--color-bg-card);
+    padding: 0.58rem 0.95rem;
+    border-radius: 6px;
+    transition: var(--transition-fast);
+}
+
+.cert-download-btn:hover {
+    color: var(--color-text-primary);
+    border-color: var(--color-siena);
+    background: rgba(184, 92, 56, 0.05);
+    transform: translateY(-1px);
+}
+
+.cert-download-btn svg {
     flex-shrink: 0;
 }
 

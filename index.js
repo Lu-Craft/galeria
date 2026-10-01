@@ -136,6 +136,26 @@ const ARTWORKS_DATABASE = {
         image: "multimedia/Plenitud.jpg",
         description: "Tercera obra y cumbre de la 'Serie: Ciclo Femenino' (Registro Oficial WE006, 90 × 60 cm). Representa el momento de máxima expansión, luminosidad y plenitud creativa y biológica de la mujer: la ovulación como instante sagrado de creación y poder vital."
     },
+    "transito": {
+        id: "transito",
+        title: "4. Tránsito - Fase Lútea",
+        subtitle: "Serie: Ciclo Femenino",
+        category: "Serie: Ciclo Femenino",
+        categoryKey: "ciclo-femenino",
+        techniqueKey: "oleo",
+        medium: "Óleo sobre Lienzo",
+        size: "60 × 90 cm",
+        widthCm: 90,
+        heightCm: 60,
+        support: "Lienzo de Algodón Tensorizado",
+        year: "2026",
+        registrationCode: "WE007",
+        certificateUrl: "multimedia/certificados/certificado_transito.pdf",
+        status: "Disponible",
+        isAvailable: true,
+        image: "multimedia/Transito.jpg",
+        description: "Cuarta obra culminante de la 'Serie: Ciclo Femenino' (Registro Oficial WE007, 60 × 90 cm). Representa la fase lútea como período de introspección profunda, madurez orgánica y transformación biológica. Con una rica paleta de veladuras al óleo sobre lienzo, Ángela María capta la serenidad contemplativa que precede al renacimiento del ciclo vital."
+    },
 
     // -------------------------------------------------------------
     // FAUNA & VIDA MARINA (Colección 3)
@@ -692,10 +712,25 @@ function initLightbox() {
             if (artwork.certificateUrl) {
                 certRowEl.style.display = "flex";
                 certBtnEl.href = artwork.certificateUrl;
-                certBtnEl.setAttribute("download", `Certificado_${artwork.registrationCode || 'Autenticidad'}_${artwork.title.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`);
-                if (certLabelEl) {
-                    certLabelEl.textContent = `Ver Certificado de Autenticidad (${artwork.registrationCode} - PDF Oficial)`;
+                certBtnEl.target = "_blank";
+                certBtnEl.rel = "noopener noreferrer";
+                certBtnEl.removeAttribute("download");
+                
+                const certDownloadBtnEl = document.getElementById("modal-cert-download-btn");
+                if (certDownloadBtnEl) {
+                    certDownloadBtnEl.href = artwork.certificateUrl;
+                    certDownloadBtnEl.setAttribute("download", `Certificado_${artwork.registrationCode}_${artwork.title.replace(/[^a-zA-Z0-9]/g, '_')}.pdf`);
                 }
+
+                if (certLabelEl) {
+                    certLabelEl.textContent = `Ver Certificado Oficial (${artwork.registrationCode} - PDF)`;
+                }
+
+                // Apertura directa en nueva pestaña con el visor nativo de PDFs del navegador
+                certBtnEl.onclick = (e) => {
+                    e.preventDefault();
+                    window.open(artwork.certificateUrl, '_blank', 'noopener,noreferrer');
+                };
             } else {
                 certRowEl.style.display = "none";
             }
