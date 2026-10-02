@@ -6,7 +6,7 @@
  * ==========================================================================
  */
 
-// Base de Datos Curatorial Completa (13 Obras Reales de Ángela María organizadas por Series)
+// Base de Datos Curatorial Completa (13 Obras Reales organizadas por Series)
 const ARTWORKS_DATABASE = {
     // -------------------------------------------------------------
     // SERIE: SER-ES (Colección 1)
@@ -29,7 +29,7 @@ const ARTWORKS_DATABASE = {
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Sirena.jpg",
-        description: "Obra insignia de la colección 'Serie: Ser-Es' (Registro Oficial WE011, 80 × 56 cm). A través del dibujo orgánico al carboncillo y veladuras sobre papel kraft crudo, la artista desvela una criatura mitológica que emerge de la penumbra acuática. El soporte de tono tierra evoca pergaminos renacentistas mientras que la intensidad penetrante de la mirada desafía al espectador con un magnetismo poético ineludible."
+        description: "Es la obra insignia de mi serie 'Ser-Es' (Registro Oficial WE011, 80 × 56 cm). A través del trazo orgánico al carboncillo y veladuras sutiles sobre papel kraft crudo, doy vida a una criatura mitológica que emerge de la penumbra acuática. Elegí este soporte terroso para evocar la textura de los antiguos pergaminos, buscando que la intensidad penetrante de su mirada despierte un magnetismo poético ineludible en quien la contempla."
     },
     "satiro": {
         id: "satiro",
@@ -49,7 +49,7 @@ const ARTWORKS_DATABASE = {
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Sátiro.jpg",
-        description: "Pieza de la colección 'Serie: Ser-Es' (Registro Oficial WE012, 80 × 56 cm). Un estudio psicológico profundo sobre la dualidad humana y animal. La figura caprina sostiene la máscara en un gesto de vulnerabilidad y renuncia. Con un trazo enérgico y expresivo, Ángela María explora los mitos como espejos de los dilemas íntimos y emocionales del ser contemporáneo."
+        description: "Pieza central de mi serie 'Ser-Es' (Registro Oficial WE012, 80 × 56 cm). Planteo aquí una introspección sobre la dualidad entre nuestra pulsión instintiva y la fragilidad emocional. La figura caprina sostiene la máscara en un gesto de renuncia y vulnerabilidad. Mediante un trazo enérgico en grafito y óleo sobre papel kraft, exploro el mito como espejo de nuestros dilemas íntimos más sinceros."
     },
     "lechuza": {
         id: "lechuza",
@@ -69,7 +69,7 @@ const ARTWORKS_DATABASE = {
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Lechuza.jpg",
-        description: "Composición de la colección 'Serie: Ser-Es' (Registro Oficial WE013, 80 × 56 cm) donde la presencia alada y la anatomía rapaz se funden en una sola esencia vigía. Las texturas vibrantes y la paleta crepuscular de ocres, sepias y blancos nacarados transportan a una atmósfera ritual impregnada de silencio, enigma y sabiduría ancestral."
+        description: "En esta obra de mi serie 'Ser-Es' (Registro Oficial WE013, 80 × 56 cm), fusiono la anatomía rapaz y la presencia alada en una sola esencia vigía. Mediante texturas vibrantes de óleo y pastel sobre lienzo, con una paleta crepuscular de ocres, sepias y blancos nacarados, busco trasladar al espectador a una atmósfera ritual impregnada de silencio, misterio y sabiduría ancestral."
     },
 
     // -------------------------------------------------------------
@@ -93,7 +93,7 @@ const ARTWORKS_DATABASE = {
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Fluvia.jpg",
-        description: "Primera obra de la 'Serie: Ciclo Femenino' (Registro Oficial WE004, 60 × 90 cm). La ingravidez acuática y el despertar biológico se funden en la sensualidad botánica. Las aletas vaporosas de un pez betta bermellón flotan entre pétalos de rosas y un fondo azul de matices aterciopelados, representando la menarquía como rito sagrado del ciclo vital."
+        description: "Primera obra con la que inicio mi 'Serie: Ciclo Femenino' (Registro Oficial WE004, 60 × 90 cm). En este lienzo celebro el inicio del ciclo biológico: la menarquía concebida como un rito sagrado. Entre la ingravidez acuática y la sensualidad botánica, hice flotar las aletas vaporosas de un pez betta bermellón entre pétalos de rosas sobre un azul aterciopelado que abraza el despertar femenino."
     },
     "renovacion": {
         id: "renovacion",
@@ -113,7 +113,7 @@ const ARTWORKS_DATABASE = {
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Renovación.jpg",
-        description: "Segunda obra de la 'Serie: Ciclo Femenino' (Registro Oficial WE005, 90 × 60 cm). Símbolo milenario de renacimiento, intuición y vitalidad ascendente. La liebre es capturada en un momento de quietud expectante entre la hojarasca, encarnando la energía renovadora y fecunda de la fase folicular."
+        description: "Segunda obra de mi 'Serie: Ciclo Femenino' (Registro Oficial WE005, 90 × 60 cm). Para encarnar la fase folicular elegí a la liebre, símbolo milenario de intuición, vitalidad ascendente y renacimiento. La retraté en un instante de quietud expectante entre la hojarasca, transmitiendo esa energía renovadora y fértil que florece en nuestro interior tras el reposo."
     },
     "plenitud": {
         id: "plenitud",
@@ -133,7 +133,7 @@ const ARTWORKS_DATABASE = {
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Plenitud.jpg",
-        description: "Tercera obra y cumbre de la 'Serie: Ciclo Femenino' (Registro Oficial WE006, 90 × 60 cm). Representa el momento de máxima expansión, luminosidad y plenitud creativa y biológica de la mujer: la ovulación como instante sagrado de creación y poder vital."
+        description: "Tercera obra y cumbre de mi 'Serie: Ciclo Femenino' (Registro Oficial WE006, 90 × 60 cm). Con este lienzo plasmo el cenit de máxima expansión, luminosidad y plenitud creativa de la mujer: la ovulación como instante sagrado donde confluyen la belleza biológica, la abundancia y el poder creador de la vida."
     },
     "transito": {
         id: "transito",
@@ -153,7 +153,7 @@ const ARTWORKS_DATABASE = {
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/Transito.jpg",
-        description: "Cuarta obra culminante de la 'Serie: Ciclo Femenino' (Registro Oficial WE007, 60 × 90 cm). Representa la fase lútea como período de introspección profunda, madurez orgánica y transformación biológica. Con una rica paleta de veladuras al óleo sobre lienzo, Ángela María capta la serenidad contemplativa que precede al renacimiento del ciclo vital."
+        description: "Cuarta obra culminante de mi 'Serie: Ciclo Femenino' (Registro Oficial WE007, 60 × 90 cm). En ella represento la fase lútea: un tiempo de introspección profunda, madurez orgánica y transformación biológica. A través de una paleta de veladuras al óleo sobre lienzo, quise captar la serenidad contemplativa y el recogimiento que preceden al eterno renacimiento del ciclo vital."
     },
 
     // -------------------------------------------------------------
@@ -177,7 +177,7 @@ const ARTWORKS_DATABASE = {
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/LEON.jpg",
-        description: "Obra de formato íntimo al óleo sobre lienzo (Registro Oficial WE002, 20 × 20 cm). Una pintura de empaste expresivo y concentrado, donde cada enérgico trazo carga la melena con destellos de ocre, siena tostada y dorados volcánicos, esculpiendo una mirada frontal de serena majestuosidad."
+        description: "Obra de formato íntimo al óleo sobre lienzo (Registro Oficial WE002, 20 × 20 cm). En esta pieza apliqué un empaste concentrado y matérico con espátula; cada trazo carga la melena con destellos de ocre, siena tostada y dorados volcánicos para esculpir una mirada frontal impregnada de serena majestuosidad y bravura."
     },
     "pez-leon": {
         id: "pez-leon",
@@ -187,8 +187,8 @@ const ARTWORKS_DATABASE = {
         categoryKey: "fauna-marina",
         techniqueKey: "oleo",
         medium: "Óleo sobre Lienzo",
-        size: "70 × 30 cm",
-        widthCm: 30,
+        size: "70 × 50 cm",
+        widthCm: 50,
         heightCm: 70,
         support: "Lienzo sobre Bastidor Doble",
         year: "2025",
@@ -197,7 +197,7 @@ const ARTWORKS_DATABASE = {
         status: "Disponible",
         isAvailable: true,
         image: "multimedia/PEZ LEON.jpg",
-        description: "Lienzo vertical estilizado al óleo sobre lienzo (Registro Oficial WE001, 70 × 30 cm). La geometría y los reflejos oceánicos se disuelven en pinceladas facetadas de azules cobalto y turquesas. El pez león despliega sus espinas radiantes en un baile majestuoso y armónico, celebrando la exuberancia indómita del fondo marino."
+        description: "Lienzo vertical al óleo sobre lienzo (Registro Oficial WE001, 70 × 50 cm). En esta obra descompuse la luz marina en pinceladas facetadas de azul cobalto y turquesa. Retraté al pez león desplegando sus espinas radiantes en una danza ingrávida y armónica, celebrando la exuberancia indómita y el magnetismo misterioso de las profundidades oceánicas."
     },
     "duplo": {
         id: "duplo",
@@ -217,7 +217,7 @@ const ARTWORKS_DATABASE = {
         status: "Colección Privada",
         isAvailable: false,
         image: "multimedia/DUPLO.jpg",
-        description: "Imponente composición vertical de gran formato al óleo sobre lienzo (Registro Oficial WE003, 100 × 50 cm). Una danza sincronizada de dos peces tropicales surcando aguas iluminadas por el sol caribeño. La técnica de pinceladas facetadas crea un vibrante efecto de vitral o mosaico impresionista."
+        description: "Composición vertical de gran formato al óleo sobre lienzo (Registro Oficial WE003, 100 × 50 cm, perteneciente a Colección Privada). Pinté dos peces tropicales en una danza sincronizada surcando aguas caribeñas iluminadas por el sol. Mi técnica de pinceladas facetadas genera un efecto de mosaico y vitral que transforma el movimiento acuático en pura luz y vibración cromática."
     },
 
     // -------------------------------------------------------------
@@ -241,7 +241,7 @@ const ARTWORKS_DATABASE = {
         status: "Colección Privada",
         isAvailable: false,
         image: "multimedia/Levi Carlo.jpg",
-        description: "Retrato de formato cuadrado al óleo sobre lienzo (Registro Oficial WE009, 25 × 25 cm). Cargado de ternura y frescura cromática, la pincelada directa y luminosa inmortaliza la chispa de asombro e inocencia en la mirada infantil."
+        description: "Retrato al óleo sobre lienzo de formato íntimo (Registro Oficial WE009, 25 × 25 cm, Colección Privada). Busqué capturar con frescura cromática y pinceladas directas la ternura genuina de la infancia, inmortalizando para siempre la chispa viva de asombro e inocencia que brilla en su mirada."
     },
     "luan": {
         id: "luan",
@@ -261,7 +261,7 @@ const ARTWORKS_DATABASE = {
         status: "Colección Privada",
         isAvailable: false,
         image: "multimedia/Luan.jpg",
-        description: "Retrato al óleo sobre lienzo (Registro Oficial WE008, 25 × 25 cm). Una mirada serena y contemplativa envuelta en un aura luminosa de tonos menta y aguamarina. El modelado sutil del rostro captura la juventud, los anhelos y el silencio interior."
+        description: "Retrato al óleo sobre lienzo (Registro Oficial WE008, 25 × 25 cm, Colección Privada). Envolví la composición en una atmósfera luminosa de tonos menta y aguamarina. A través del modelado sutil de las facciones, quise plasmar la mirada serena y contemplativa que cobija la juventud, los anhelos y el silencio interior."
     },
     "william": {
         id: "william",
@@ -281,7 +281,7 @@ const ARTWORKS_DATABASE = {
         status: "Colección Privada",
         isAvailable: false,
         image: "multimedia/William.jpg",
-        description: "Retrato vertical de gran formato al óleo sobre lienzo (Registro Oficial WE010, 90 × 60 cm). Una atmósfera íntima que conjuga la figura humana con el entorno costero. El sombrero de paja, la camisa blanca y el rumor visual de las olas capturan la calma de una tarde tropical junto al mar."
+        description: "Retrato vertical de gran formato al óleo sobre lienzo (Registro Oficial WE010, 90 × 60 cm, Colección Privada). Creé una atmósfera íntima y reposada conjugando la figura humana con la calidez del paisaje costero. El sombrero de paja, la camisa blanca y el murmullo visual de las olas me permitieron plasmar la calma profunda de una tarde junto al mar."
     }
 };
 
@@ -487,24 +487,51 @@ function initGalleryFilters() {
     }
 
     // Interacción desde las tarjetas de Colecciones superiores
-    document.querySelectorAll("[data-filter-trigger]").forEach(trigger => {
-        trigger.addEventListener("click", () => {
-            const targetFilter = trigger.getAttribute("data-filter-trigger");
-            if (!targetFilter) return;
+    const handleCollectionSelection = (targetFilter, e) => {
+        if (!targetFilter) return;
+        if (e && e.preventDefault) e.preventDefault();
 
-            activeCategory = targetFilter;
+        activeCategory = targetFilter;
 
-            filterButtons.forEach(button => {
-                const isSelected = button.getAttribute("data-filter") === targetFilter;
-                button.classList.toggle("active", isSelected);
-                button.setAttribute("aria-selected", isSelected ? "true" : "false");
-                if (isSelected && filtersContainer) {
-                    const scrollTarget = button.offsetLeft - (filtersContainer.clientWidth / 2) + (button.clientWidth / 2);
-                    filtersContainer.scrollTo({ left: Math.max(0, scrollTarget), behavior: "smooth" });
-                }
+        filterButtons.forEach(button => {
+            const isSelected = button.getAttribute("data-filter") === targetFilter;
+            button.classList.toggle("active", isSelected);
+            button.setAttribute("aria-selected", isSelected ? "true" : "false");
+            if (isSelected && filtersContainer) {
+                const scrollTarget = button.offsetLeft - (filtersContainer.clientWidth / 2) + (button.clientWidth / 2);
+                filtersContainer.scrollTo({ left: Math.max(0, scrollTarget), behavior: "smooth" });
+            }
+        });
+
+        applyFilters();
+
+        // Desplazamiento fluido directamente a los filtros / cuadrícula de obras
+        const targetElement = document.getElementById("gallery-filters") || document.getElementById("gallery-grid");
+        if (targetElement) {
+            const header = document.getElementById("header");
+            const headerHeight = header ? header.offsetHeight : 64;
+            const elementTop = targetElement.getBoundingClientRect().top + window.pageYOffset;
+            const offsetPosition = elementTop - headerHeight - 12;
+
+            window.scrollTo({
+                top: offsetPosition,
+                behavior: "smooth"
             });
+        }
+    };
 
-            applyFilters();
+    document.querySelectorAll("[data-filter-trigger]").forEach(trigger => {
+        trigger.addEventListener("click", (e) => {
+            const targetFilter = trigger.getAttribute("data-filter-trigger");
+            handleCollectionSelection(targetFilter, e);
+        });
+    });
+
+    document.querySelectorAll(".collection-card[data-collection-key]").forEach(card => {
+        card.addEventListener("click", (e) => {
+            if (e.target.closest("[data-filter-trigger]")) return;
+            const targetFilter = card.getAttribute("data-collection-key");
+            handleCollectionSelection(targetFilter, e);
         });
     });
 }
@@ -637,15 +664,30 @@ function initLightbox() {
         const targetPercent = isMobile ? 0.50 : 0.46;
         const scale = (targetPercent * stageH) / refHeightCm;
 
-        let targetHeight = Math.round(dims.heightCm * scale);
-        let targetWidth = Math.round(dims.widthCm * scale);
+        // Proporción real de la obra (derivada de la imagen para garantizar 0% de recorte curatorial)
+        const modalImgEl = document.getElementById("modal-art-image");
+        const hasNaturalDims = modalImgEl && modalImgEl.naturalWidth > 0 && modalImgEl.naturalHeight > 0;
+        const imgAspect = hasNaturalDims
+            ? (modalImgEl.naturalWidth / modalImgEl.naturalHeight)
+            : (dims.widthCm / dims.heightCm);
+
+        let targetHeight, targetWidth;
+        const isLandscape = dims.widthCm > dims.heightCm || imgAspect > 1.05;
+
+        if (isLandscape) {
+            targetWidth = Math.round(dims.widthCm * scale);
+            targetHeight = Math.round(targetWidth / imgAspect);
+        } else {
+            targetHeight = Math.round(dims.heightCm * scale);
+            targetWidth = Math.round(targetHeight * imgAspect);
+        }
 
         // Para obras de formato pequeño (20x20 o 25x25), asegurar visibilidad y presencia estética
         const minDimension = isMobile ? 65 : 75;
         if (targetHeight < minDimension && targetWidth < minDimension) {
             const minScale = minDimension / Math.min(dims.heightCm, dims.widthCm);
             targetHeight = Math.round(dims.heightCm * minScale);
-            targetWidth = Math.round(dims.widthCm * minScale);
+            targetWidth = Math.round(targetHeight * imgAspect);
         }
 
         // Limitar dimensiones para evitar desbordes o colisiones con flechas de navegación y rodapié:
@@ -742,7 +784,12 @@ function initLightbox() {
 
         // Rellenar contenido curatorial
         modalImg.src = artwork.image;
-        modalImg.alt = `Exhibición de la obra "${artwork.title}" de Ángela María`;
+        modalImg.alt = `Exhibición de mi obra "${artwork.title}"`;
+        modalImg.onload = () => {
+            if (isWallMode) {
+                updateWallScale(artworkKeys[currentArtworkIndex]);
+            }
+        };
         modalTitle.textContent = artwork.title;
         if (modalSubtitle) modalSubtitle.textContent = artwork.subtitle;
         if (modalCategory) modalCategory.textContent = artwork.category;
@@ -814,7 +861,7 @@ function initLightbox() {
         // Configurar botón de consulta directa de obra
         if (modalInquireBtn) {
             const statusNotice = artwork.isAvailable 
-                ? "Consultar Disponibilidad & Adquisición"
+                ? "Consultar Disponibilidad de mi Obra"
                 : "Solicitar Comisión o Encargo";
 
             modalInquireBtn.onclick = () => {
@@ -1123,7 +1170,7 @@ function initContactForm() {
         };
 
         statusDiv.className = "form-status success";
-        statusDiv.textContent = "Transmitiendo su mensaje al taller de la artista...";
+        statusDiv.textContent = "Enviando tu mensaje directamente a mi taller...";
         statusDiv.style.display = "block";
 
         const formAction = form.getAttribute("action");
@@ -1139,7 +1186,7 @@ function initContactForm() {
         .then(response => {
             if (response.ok) {
                 statusDiv.className = "form-status success";
-                statusDiv.innerHTML = `<strong>¡Mensaje recibido con éxito!</strong> Ángela María responderá a tu solicitud a la mayor brevedad.`;
+                statusDiv.innerHTML = `<strong>¡Muchas gracias por escribirme!</strong> He recibido tu solicitud y te responderé personalmente a la brevedad.`;
                 form.reset();
             } else {
                 return response.json().then(data => {
